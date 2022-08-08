@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@iconify-json/heroicons-outline': ^1.1.2
   '@iconify-json/heroicons-solid': ^1.1.2
+  '@iconify-json/simple-icons': ^1.1.21
   '@sveltejs/adapter-auto': next
   '@sveltejs/adapter-node': next
   '@sveltejs/adapter-static': next
@@ -47,6 +48,9 @@ specifiers:
   vite: ^3.0.4
   vite-plugin-pwa: ^0.12.3
   workbox-window: ^6.5.4
+
+dependencies:
+  '@iconify-json/simple-icons': 1.1.21
 
 devDependencies:
   '@iconify-json/heroicons-outline': 1.1.2
@@ -415,6 +419,8 @@ packages:
     resolution: {integrity: sha512-TYk3OA0HKL6qNryUayb5UUEhM/rkOQozIBEA5ITXh5DWrSp0TlUQXMyZmnWxG/DizSWBeeQ0Zbc5z8UGaaqoeg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.18.10
     dev: true
 
   /@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression/7.18.6_@babel+core@7.18.10:
@@ -1331,9 +1337,14 @@ packages:
       '@iconify/types': 1.1.0
     dev: true
 
+  /@iconify-json/simple-icons/1.1.21:
+    resolution: {integrity: sha512-LQo8v3QKpvXyIFu98a8lyItSgi7jSiC+/P1FUaBAay0abdKebrwEE9sFwr/zrnwCQRp9x2DRAb2/xn8CI/6R8A==}
+    dependencies:
+      '@iconify/types': 1.1.0
+    dev: false
+
   /@iconify/types/1.1.0:
     resolution: {integrity: sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==}
-    dev: true
 
   /@iconify/utils/1.0.33:
     resolution: {integrity: sha512-vGeAqo7aGPxOQmGdVoXFUOuyN+0V7Lcrx2EvaiRjxUD1x6Om0Tvq2bdm7E24l2Pz++4S0mWMCVFXe/17EtKImQ==}
