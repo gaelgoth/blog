@@ -120,4 +120,8 @@ as published by Sam Hocevar. See the [COPYING](https://github.com/importantimpor
 special thanks / inspired from:
 
 - [@michaeloliverx - Generate Posts List](https://github.com/pngwn/MDsveX/issues/294#issuecomment-907029639)
+- [@jthegedus - Build Mode](https://github.com/sveltejs/kit/issues/1258#issuecomment-874482104)
+
+credits:
+
 - icon made by [Kpouri](https://github.com/kpouri)
