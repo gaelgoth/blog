@@ -2,6 +2,7 @@ import type { SiteConfig } from '$lib/types/site'
 
 const bio = [
   'Devops Engineer from Switzerland, Lausanne',
+  'Devops Engineer based in Switzerland',
   'Devops Engineer who loves old school Hip-Hop',
   'Devops Engineer, photographer lover',
   'Devops Engineer fan of The Los Angeles Lakers',
@@ -12,14 +13,14 @@ const bio = [
 
 export const site: SiteConfig = {
   protocol: 'https://',
-  domain: import.meta.env.URARA_SITE_DOMAIN ?? 'urara-demo.netlify.app',
+  domain: import.meta.env.URARA_SITE_DOMAIN ?? 'blog.gothuey.dev',
   title: 'Gaël G.',
-  subtitle: 'Sweet & Powerful SvelteKit Blog Template',
+  subtitle: "Blog",
   lang: 'en-US',
-  description: 'Powered by SvelteKit/Urara',
+  description: 'The place where I share things I find interesting',
   author: {
     name: 'Gaël G.',
-    avatar: '/assets/profile.jpg',
+    avatar: '/assets/profile.webp',
     status: '👋🏽',
     bio: bio[~~(Math.random() * bio.length)],
     metadata: [
@@ -38,11 +39,6 @@ export const site: SiteConfig = {
         icon: 'i-simple-icons-vsco',
         link: 'https://vsco.co/gaelgothuey/gallery'
       },
-      {
-        text: 'super_gael',
-        icon: 'i-simple-icons-soundcloud',
-        link: 'https://vsco.co/gaelgothuey/gallery'
-      }
     ]
   },
   themeColor: '#3D4451'
