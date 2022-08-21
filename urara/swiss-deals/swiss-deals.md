@@ -1,6 +1,6 @@
 ---
 title: 'Swiss Deals'
-image: '/swiss-deals/swiss-deals-bg.jpg'
+image: '/swiss-deals/swiss-deals-bg.webp'
 # flags:
 # - unlisted
 descr: API that aggregates deals from Digitec, Galaxus, QoQa, ...
