@@ -5,9 +5,9 @@ const bio = [
   'Devops Engineer based in Switzerland',
   'Devops Engineer who loves old school Hip-Hop',
   'Devops Engineer, photographer lover',
+  'Devops Engineer who likes sick and fresh UI',
   'Devops Engineer fan of The Los Angeles Lakers',
   'Devops Engineer who likes to watch the Formula 1 Grand Prix on Sunday',
-  'Devops Engineer who likes sick and fresh UI'
 ]
 
 

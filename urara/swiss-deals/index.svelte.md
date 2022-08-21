@@ -13,61 +13,30 @@ tags:
 ---
 > Picture: Gaël G.
 
-Welcome to Urara! this article contains some basic operations to help you quickly get started.
+## Yup, an other blog 
+Hello, I'm Gaël and welcome to my blog.
 
-## Development
+### About me 
+I'm based in Switzerland and currently working as Devops Engineer. If you presse <kbd>F5</kbd> from the home page of [blog.gothuey.dev](https://blog.gothuey.dev/)  you will see what interests me in general. 
 
-This template recommends using [pnpm](https://pnpm.io) and [@antfu/ni](https://github.com/antfu/ni). start a development server:
+```ts
+const bio = [
+  'Devops Engineer from Switzerland, Lausanne',
+  'Devops Engineer based in Switzerland',
+  'Devops Engineer who loves old school Hip-Hop',
+  'Devops Engineer, photographer lover',
+  'Devops Engineer who likes sick and fresh UI',
+  'Devops Engineer fan of The Los Angeles Lakers',
+  'Devops Engineer who likes to watch the Formula 1 Grand Prix on Sunday',
+]
 
-```bash
-# http://localhost:3000
-nr dev
+  author: {
+    name: 'Gaël G.',
+    avatar: '/assets/profile.webp',
+    status: '👋🏽',
+    bio: bio[~~(Math.random() * bio.length)],
+   ...
+  },
 ```
 
-or listen to different IP and port:
 
-```bash
-# http://0.0.0.0:3000
-nr dev --host 0.0.0.0
-
-# http://0.0.0.0:8080
-nr dev --host 0.0.0.0 --port 8080
-```
-
-## Build
-
-```bash
-nr build
-```
-****
-or use the specified adapter:
-
-```bash
-# Vercel
-VERCEL=true nr build
-
-# Cloudflare Pages
-CF_PAGES=true nr build
-
-# Netlify
-NETLIFY=true nr build
-```
-
-> This template uses `@sveltejs/adapter-auto@next` and `@sveltejs/adapter-static@next` by default.
-
-> when the environment supported by adapter-auto is not detected, it will automatically fallback to adapter-static.
-
-> u can modify it to any adapter supported by SvelteKit. see [SvelteKit Docs](https://kit.svelte.dev/docs#adapters)
-
-> u can preview the built app with `nr preview`, regardless of
-> whether u installed an adapter. This should _not_ be used to serve
-> ur app in production.
-
-## Misc
-
-```bash
-nr clean # clean the files under /src/routes/**/ and /static/
-nr check # code check
-nr format # code prittier
-nr lint # code lint
-```
