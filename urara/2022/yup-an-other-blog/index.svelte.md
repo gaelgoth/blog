@@ -13,11 +13,10 @@ created: 2022-08-01
 > Picture: Gaël G.
 
 ## Hello World! 👋🏽
-Hello, I'm Gaël and welcome to my blog.
+Hello, I'm Gaël and welcome to my technical blog.
 
 ### About me 
-I'm based in Switzerland and currently working as Devops Engineer. If you presse <kbd>F5</kbd> from the home page of [blog.gothuey.dev](https://blog.gothuey.dev/)  you will see what interests me in general. 
-
+I am from Switzerland and currently work as a DevOps engineer. The piece of code below which displays a random bio, summarizes the things that interest me.
 ```ts
 const bio = [
   'Devops Engineer from Switzerland, Lausanne',
@@ -37,17 +36,18 @@ const bio = [
    ...
   },
 ```
+See it in action by pressing <kbd>F5</kbd>  from the home page.
 ### Scope 
 I will post about the following topic: 
 - CI/CD
 - Linux/Ops
 - Python, Golang
 - Web Development
-- Github Actions,  GitLab CI/CD
+- Github Actions, GitLab CI/CD
 - Photography and other 
 
 ### Everything is Markdown
-To be correct, this is not a blog as such. This website it's more like my public note-taking directory. To take notes, I use Obsidian on which I write my text in `Markdown` format. This blog is powered by the Urara project which also based on `.md` files. Thanks to a bit of automation with Github actions, it allows me to easily create/edit a new article on [blog.gothuey.dev](https://blog.gothuey.dev/). 
+To be correct, this is not a blog as such. This website it's more like my public note-taking directory. I take my notes using [Obsidian](https://obsidian.md/) tool which uses `Markdown` text formatting. This blog is powered by the Urara project which also based on `.md` files. Thanks to a bit of automation with Github actions, it allows me to easily create/edit a new article on [blog.gothuey.dev](https://blog.gothuey.dev/). 
 
 <div class="alert shadow-inner">
   <div>
