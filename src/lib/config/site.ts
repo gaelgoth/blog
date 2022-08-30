@@ -35,9 +35,9 @@ export const site: SiteConfig = {
         link: 'https://www.linkedin.com/in/gael-gothuey'
       },
       {
-        text: 'super_gael',
-        icon: 'i-simple-icons-vsco',
-        link: 'https://vsco.co/gaelgothuey/gallery'
+        text: 'photo.gothuey',
+        icon: 'i-simple-icons-photobucket',
+        link: 'https://photo.gothuey.dev/'
       },
     ]
   },

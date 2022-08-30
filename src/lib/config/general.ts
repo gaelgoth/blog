@@ -129,7 +129,7 @@ export const header: HeaderConfig = {
     },
     {
       text: 'Photography',
-      link: '/'
+      link: 'https://photo.gothuey.dev/'
     }
   ]
 }
