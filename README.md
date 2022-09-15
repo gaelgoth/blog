@@ -6,7 +6,7 @@
 <br />
 
 <p align="center">
-<a href="https://fff.js.org"><img src="https://img.shields.io/badge/%F0%9F%8C%9F%20F%20F%20F-0.2-yellow?style=flat" alt="fff" /></a>
+<a href="https://fff.js.org"><img src="https://img.shields.io/badge/%F0%9F%8C%9F%20F%20F%20F-0.3-yellow?style=flat" alt="fff" /></a>
 <img src="https://img.shields.io/github/languages/top/importantimport/urara?color=%23ff3e00" alt="Language" />
 <a href="https://github.com/importantimport/urara/blob/main/COPYING"><img src="https://img.shields.io/github/license/importantimport/urara?color=%23fff" alt="License" /></a>
 <img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fimportantimport%2Furara.svg?type=shield" alt="FOSSA Status" />
@@ -95,7 +95,7 @@ tyvm! ur ⭐ will give me more motivation to improve this project.
 ## 🚀 Sites
 
 - [./kwaa.dev](https://kwaa.dev) - [kwaa/blog](https://github.com/kwaa/blog)
-- [成功他媽．阿瑋](https://kwchang0831.dev) - [kwchang0831/kwchang0831.dev](https://github.com/kwchang0831/kwchang0831.dev)
+- [成功他媽．阿瑋](https://urara.kwchang0831.dev) - [kwchang0831/urara.kwchang0831.dev](https://github.com/kwchang0831/urara.kwchang0831.dev)
 - [Seviche.cc](https://seviche.cc) - [Sevichecc/Urara-Blog](https://github.com/Sevichecc/Urara-Blog)
 
 and more...

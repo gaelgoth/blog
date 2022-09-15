@@ -1,12 +1,12 @@
-import type { RequestHandler } from '@sveltejs/kit'
+import type { RequestHandler } from './$types'
 import { site } from '$lib/config/site'
 import { feed } from '$lib/config/general'
 import { favicon } from '$lib/config/icon'
 import { genPosts, genTags } from '$lib/utils/posts'
 
-const render = async (
+const render = (
   posts = genPosts({ postHtml: true, postLimit: feed.limit, filterUnlisted: true })
-): Promise<string> => `<?xml version='1.0' encoding='utf-8'?>
+): string => `<?xml version='1.0' encoding='utf-8'?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>${site.protocol + site.domain}/</id>
   <title><![CDATA[${site.title}]]></title>${site.subtitle ? `\n  <subtitle><![CDATA[${site.subtitle}]]></subtitle>` : ''}${favicon ? `\n  <icon>${favicon.src}</icon>` : ''
@@ -38,9 +38,10 @@ const render = async (
       .join('')}
 </feed>`
 
-export const GET: RequestHandler = async () => ({
-  headers: {
-    'Content-Type': 'application/atom+xml; charset=utf-8'
-  },
-  body: await render()
-})
+export const prerender = true
+export const GET: RequestHandler = async () =>
+  new Response(render(), {
+    headers: {
+      'content-type': 'application/atom+xml; charset=utf-8'
+    }
+  })
