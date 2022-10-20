@@ -5,7 +5,7 @@ image: '/2022/swiss-deals-api/swiss-deals-api-bg.webp'
 # - unlisted
 summary: An API that aggregates the offers of the day
 created: 2022-10-20
-updated: 2022-10-20
+# updated: 2022-10-20
 tags: ['API', 'Go']
 
 
