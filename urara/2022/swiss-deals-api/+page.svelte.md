@@ -20,7 +20,7 @@ A friend of mine told me how he missed out on a fantastic offer on a gaming moni
   <div>
     <span class="text-lg i-simple-icons-github !w-5 !h-5"></span>
     <div>
-      <a href="https://github.com/importantimport/urara"><h3 class="font-bold my-0">gaelgoth/swiss-deals-api</h3></a>
+      <a href="https://github.com/gaelgoth/swiss-deals-api"><h3 class="font-bold my-0">gaelgoth/swiss-deals-api</h3></a>
       <div class="text-xs">Aggregate deals of the day from Digitec, Galaxus, QoQa</div>
     </div>
   </div>
