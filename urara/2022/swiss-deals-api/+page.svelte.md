@@ -59,8 +59,8 @@ In a nutshell, we require web frameworks that support HTTP methods and HTML scra
 
 The development environment with Golang is relatively easy to set up. I tested several alternatives:
 
-- **Makefile**: Start task performs `go run main.go` command and writes it's process id to PID_FILE
-- **Docker-compose.dev**: Run the Golang build inside a container coupled with [Air](https://github.com/cosmtrek/air) for hot reloading when editing the code
+- **Makefile**: The startup task runs the command `go run main.go` and writes its process ID to PID_FILE.
+- **Docker-compose.dev**: Run the Golang build inside a container coupled with [Air](https://github.com/cosmtrek/air) for hot reloading when editing the code from IDE
 - **Air** (the easiest one): As described by his creator, just `air` command in your project root directory, leave it alone, and focus on your code.
 
 Everything is ready, let's see what [Swiss Deals API](https://deals-api.gothuey.dev/) can accomplish after a few hours of code.
@@ -86,7 +86,7 @@ $ curl https://deals-api.gothuey.dev/api/deals/digitec | jq
 }
 ```
 
-You can interact by consulting the Swagger documentation on <https://deals-api.gothuey.dev/swagger/index.html>.
+You can interact with [Swiss Deals API](https://deals-api.gothuey.dev/) by consulting the Swagger documentation on <https://deals-api.gothuey.dev/swagger/index.html>.
 
 ## Final thoughts
 
