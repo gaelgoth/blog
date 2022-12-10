@@ -38,7 +38,7 @@
   class:group={preview}
   class:image-full={preview && post.type === 'article' && post.image}
   class:before:!rounded-none={preview && post.image}
-  class="h-entry card bg-base-100 rounded-none md:rounded-box md:shadow-xl z-10">
+  class="h-entry card bg-base-100 rounded-none md:rounded-box md:shadow-xl overflow-hidden z-10">
   {#if !preview && postConfig.bridgy}
     <div id="bridgy" class="hidden">
       {#each post.flags?.some( flag => flag.startsWith('bridgy') ) ? post.flags.flatMap( flag => (flag.startsWith('bridgy') ? flag.slice(7) : []) ) : [...(postConfig.bridgy.post ?? []), ...(postConfig.bridgy[post.type] ?? [])] as target}
@@ -72,9 +72,11 @@
     <div class="flex flex-col gap-2">
       {#if post.image && !preview}
         <figure
-          class={`md:order-last mb-4 ${post.type === 'article' ? 'flex-col gap-2 -mx-4 -mt-8 md:mt-0' : 'flex-col -mx-8'}`}>
+          class={`md:order-last rounded-box shadow-xl mb-4 ${
+            post.type === 'article' ? 'flex-col gap-2 -mx-4 -mt-8 md:mt-0' : 'flex-col -mx-8'
+          }`}>
           <Image
-            class={`${post.type === 'article' ? 'u-featured rounded-box shadow-xl' : 'u-photo'}`}
+            class={`${post.type === 'article' ? 'u-featured' : 'u-photo'}`}
             src={post.image}
             alt={post.image}
             {loading}

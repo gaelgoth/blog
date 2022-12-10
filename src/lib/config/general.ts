@@ -2,8 +2,8 @@ import type { ThemeConfig, HeadConfig, HeaderConfig, FooterConfig, DateConfig, F
 
 export const theme: ThemeConfig = [
   {
-    name: 'light',
-    text: '🌕 Light'
+    name: 'cmyk',
+    text: '🖨 Light'
   },
   {
     name: 'dark',
