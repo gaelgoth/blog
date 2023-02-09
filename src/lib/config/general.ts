@@ -6,7 +6,7 @@ export const theme: ThemeConfig = [
     text: '🖨 Light'
   },
   {
-    name: 'dark',
+    name: 'dracula',
     text: '🌑 Dark'
   }
   // {

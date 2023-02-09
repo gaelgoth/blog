@@ -3,8 +3,9 @@ import { defineConfig } from 'vite'
 // vite plugin
 import UnoCSS from 'unocss/vite'
 import { presetTagify, presetIcons, extractorSvelte } from 'unocss'
+import { imagetools } from 'vite-imagetools'
+import { sveltekit as SvelteKit } from '@sveltejs/kit/vite'
 import { SvelteKitPWA } from '@vite-pwa/sveltekit'
-import { sveltekit } from '@sveltejs/kit/vite'
 // postcss & tailwindcss
 import TailwindCSS from 'tailwindcss'
 import tailwindConfig from './tailwind.config'
@@ -13,6 +14,12 @@ import cssnano from 'cssnano'
 
 export default defineConfig({
   envPrefix: 'URARA_',
+  build: {
+    sourcemap: false,
+    rollupOptions: {
+      cache: false
+    }
+  },
   css: {
     postcss: {
       plugins: [
@@ -39,7 +46,8 @@ export default defineConfig({
         presetIcons({ scale: 1.5 })
       ]
     }),
-    sveltekit(),
+    imagetools(),
+    SvelteKit(),
     SvelteKitPWA({
       registerType: 'autoUpdate',
       manifest: false,
