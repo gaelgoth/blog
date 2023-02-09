@@ -1,10 +1,10 @@
 ---
 title: 'Give a second life to my 2011 Mac mini'
-image: '/2022/swiss-deals-api/swiss-deals-api-bg.webp'
+image: '/2023/mac-mini-as-homeserver/mac-mini-homelab.webp'
 # flags:
 # - unlisted
 summary:  Recycling your 2011 Mac mini into a Home lab Server
-created: 2022-12-22
+created: 2023-02-09
 # updated: 2022-10-20
 tags: ['Home lab', 'Container']
 
@@ -78,9 +78,9 @@ As a home server administrator, I have always strived to keep my infrastructure 
 
 ## Final thoughts
 
-Overall, turning my old Mac mini into a home server was a fun and rewarding project. Not only did it give my old machine a new lease on life, but it also provided me with a powerful and reliable home server that I can use for all sorts of tasks. If you have an old Mac mini that you're not using, I highly recommend giving a second life to your old machine a try as a Home!
+Overall, turning my old Mac mini into a home server was a fun and rewarding project. Not only did it give my old machine a new lease on life, but it also provided me with a powerful and reliable home server that I can use for all sorts of tasks. If you have an old Mac mini that you're not using, I highly recommend giving a second life to your old device a try as a Home!
 
-## Resources
+## Useful resources ✨
 
 - [Mac Mini rebooting tweaks: setpci -s 0:1f.0 0xa4.b=0](https://smackerelofopinion.blogspot.com/2011/09/mac-mini-rebooting-tweaks-setpci-s-01f0.html?showComment=1364653744596#c121835951350041303)
 - [How to run script on startup on Ubuntu 22.04 Jammy Jellyfish Server/Desktop](https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-22-04-jammy-jellyfish-server-desktop)
