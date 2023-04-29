@@ -102,12 +102,9 @@ I was able to learn Golang programming through this short project. Along with im
   - [ ] microspot.ch
   - [ ] ...
 
-<div class="alert shadow-inner">
-  <div>
-    <span class="text-lg i-simple-icons-github !w-5 !h-5"></span>
-    <div>
-      <a href="https://github.com/gaelgoth/swiss-deals-api"><h3 class="font-bold my-0">gaelgoth/swiss-deals-api</h3></a>
-      <div class="text-xs">Aggregate deals of the day from Digitec, Galaxus, QoQa</div>
-    </div>
-  </div>
-</div>
+<script lang="ts">
+  import Github from '$lib/components/extra/github.svelte'
+</script>
+
+<Github user='gaelgoth' repo='swiss-deals-api'/>
+
