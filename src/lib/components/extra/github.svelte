@@ -30,10 +30,13 @@
             </a>
           </div>
           <p class="prose">
-            {info.description}
-            <br />
-            <!-- FIXME: Do not display when there is no homepage -->
-            <a rel="noopener noreferrer external" target="_blank" href={info.homepage}>{info.homepage}</a>
+            {#if info.description}
+              {info.description}
+              <br />
+            {/if}
+            {#if info.homepage}
+              <a rel="noopener noreferrer external" target="_blank" href={info.homepage}>{info.homepage}</a>
+            {/if}
           </p>
         </div>
         <img class="w-20 h-20 mt-0 ml-auto mb-auto rounded-xl flex-initial" alt="owner_avatar" src={info.owner.avatar_url} />
