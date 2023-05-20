@@ -2,15 +2,15 @@
 import { defineConfig } from 'vite'
 // vite plugin
 import UnoCSS from 'unocss/vite'
-import { presetTagify, presetIcons, extractorSvelte } from 'unocss'
+import { presetTagify, presetIcons } from 'unocss'
+import extractorSvelte from '@unocss/extractor-svelte'
 import { imagetools } from 'vite-imagetools'
 import { sveltekit as SvelteKit } from '@sveltejs/kit/vite'
 import { SvelteKitPWA } from '@vite-pwa/sveltekit'
 // postcss & tailwindcss
 import TailwindCSS from 'tailwindcss'
 import tailwindConfig from './tailwind.config'
-import autoprefixer from 'autoprefixer'
-import cssnano from 'cssnano'
+import LightningCSS from 'postcss-lightningcss'
 
 export default defineConfig({
   envPrefix: 'URARA_',
@@ -22,17 +22,7 @@ export default defineConfig({
   },
   css: {
     postcss: {
-      plugins: [
-        TailwindCSS(tailwindConfig),
-        autoprefixer(),
-        ...(process.env.NODE_ENV === 'production'
-          ? [
-            cssnano({
-              preset: ['default', { discardComments: { removeAll: true } }]
-            })
-          ]
-          : [])
-      ]
+      plugins: [TailwindCSS(tailwindConfig), LightningCSS()]
     }
   },
   plugins: [
