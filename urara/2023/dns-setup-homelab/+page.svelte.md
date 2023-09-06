@@ -19,9 +19,7 @@ In this blog post, we'll explore an efficient method to set up domain names and 
 
 I opted to purchase the domain name gothuey.dev from [Infomaniak](https://www.infomaniak.com/en/domains). While there are free alternatives available, such as [Duck DNS](https://www.duckdns.org/). In my case, I'm going to do the set-up with a domain name purchased from Infomaniak.
 
-What I aim to achieve is using my domain as is: `service.homelab.gothuey.dev` (e.g., `grafana.homelab.gothuey.dev`). This setup allows me to create subdomains for each of my home lab services, giving them a distinct and easily accessible identity instead of using ip address and port.
-
-![Generate Certificate](/2023/dns-setup-homelab/example-with-dashboard.webp)
+![Demo with homelab dashboard](/2023/dns-setup-homelab/example-with-dashboard.webp)
 
 The objective I'm striving for involves utilizing my domain directly – for instance, `service.homelab.gothuey.dev` (as seen with `grafana.homelab.gothuey.dev`). This approach empowers me to establish subdomains for various home lab services (Grafana, Jellyfin,.PairDrop,...). By doing so, each service gains a unique and easily recognizable identity, eliminating the need to rely on IP addresses and ports for access.
 
