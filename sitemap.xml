@@ -11,33 +11,38 @@
     </url>
     
         <url>
+            <loc>https://blog.gothuey.dev/2023/dns-setup-homelab</loc>
+            <lastmod>2023-09-06T18:51:03.089Z</lastmod>
+            <priority>0.5</priority>
+        </url>
+        <url>
             <loc>https://blog.gothuey.dev/2023/vaporflow-startpage</loc>
-            <lastmod>2023-05-20T21:04:15.682Z</lastmod>
+            <lastmod>2023-09-06T18:51:03.093Z</lastmod>
             <priority>0.5</priority>
         </url>
         <url>
             <loc>https://blog.gothuey.dev/2023/mac-mini-as-homeserver</loc>
-            <lastmod>2023-05-20T21:04:15.682Z</lastmod>
+            <lastmod>2023-09-06T18:51:03.089Z</lastmod>
             <priority>0.5</priority>
         </url>
         <url>
             <loc>https://blog.gothuey.dev/2022/swiss-deals-api</loc>
-            <lastmod>2023-05-20T21:04:15.678Z</lastmod>
+            <lastmod>2023-09-06T18:51:03.085Z</lastmod>
             <priority>0.5</priority>
         </url>
         <url>
             <loc>https://blog.gothuey.dev/2022/yup-an-other-blog</loc>
-            <lastmod>2023-05-20T21:04:15.682Z</lastmod>
+            <lastmod>2023-09-06T18:51:03.089Z</lastmod>
             <priority>0.5</priority>
         </url>
         <url>
             <loc>https://blog.gothuey.dev/hello-world/elements</loc>
-            <lastmod>2023-05-20T21:04:15.686Z</lastmod>
+            <lastmod>2023-09-06T18:51:03.093Z</lastmod>
             <priority>0.5</priority>
         </url>
         <url>
             <loc>https://blog.gothuey.dev/hello-world/toc-disabled</loc>
-            <lastmod>2023-05-20T21:04:15.686Z</lastmod>
+            <lastmod>2023-09-06T18:51:03.093Z</lastmod>
             <priority>0.5</priority>
         </url>
         <url>
