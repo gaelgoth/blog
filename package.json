@@ -87,6 +87,6 @@
   "dependencies": {
     "@giscus/svelte": "^2.2.8",
     "@iconify-json/simple-icons": "^1.1.42",
-    "sharp": "^0.32.6"
+    "sharp": "^0.32.5"
   }
 }
