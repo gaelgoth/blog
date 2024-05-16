@@ -36,7 +36,7 @@ export const site: SiteConfig = {
       },
       {
         text: 'photo.gothuey',
-        icon: 'i-simple-icons-photobucket',
+        icon: 'i-simple-icons-photon',
         link: 'https://photo.gothuey.dev/'
       },
     ]
