@@ -1,12 +1,15 @@
 ---
+flags:
+- unlisted
+
 title: 'Hello World'
 image: '/hello-world/urara.webp'
 alt: 'Urara'
 created: 2021-11-01
 updated: 2021-12-12
 tags:
-  - 'Hello World'
-  - 'Urara'
+  # - 'Hello World'
+  # - 'Urara'
 ---
 
 Welcome to Urara! this article contains some basic operations to help you quickly get started.

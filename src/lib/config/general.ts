@@ -1,54 +1,122 @@
-import type { DateConfig, FeedConfig, FooterConfig, HeadConfig, HeaderConfig, ThemeConfig } from '$lib/types/general'
+import type { ThemeConfig, HeadConfig, HeaderConfig, FooterConfig, DateConfig, FeedConfig } from '$lib/types/general'
 
 export const theme: ThemeConfig = [
   {
     name: 'cmyk',
-    text: '🖨 Light',
+    text: '🖨 Light'
   },
   {
     name: 'dracula',
-    text: '🧛 Dark',
-  },
-  {
-    name: 'valentine',
-    text: '🌸 Valentine',
-  },
-  {
-    name: 'aqua',
-    text: '💦 Aqua',
-  },
-  {
-    name: 'synthwave',
-    text: '🌃 Synthwave',
-  },
-  {
-    name: 'night',
-    text: '🌃 Night',
-  },
-  {
-    name: 'lofi',
-    text: '🎶 Lo-Fi',
-  },
-  {
-    name: 'lemonade',
-    text: '🍋 Lemonade',
-  },
-  {
-    name: 'cupcake',
-    text: '🧁 Cupcake',
-  },
-  {
-    name: 'garden',
-    text: '🏡 Garden',
-  },
-  {
-    name: 'retro',
-    text: '🌇 Retro',
-  },
-  {
-    name: 'black',
-    text: '🖤 Black',
-  },
+    text: '🌑 Dark'
+  }
+  // {
+  //   name: 'dracula',
+  //   text: '🧛 Dracula'
+  // },
+  // {
+  //   name: 'cupcake',
+  //   text: '🧁 Cupcake'
+  // },
+  // {
+  //   name: 'bumblebee',
+  //   text: '🐝 Bumblebee'
+  // },
+  // {
+  //   name: 'emerald',
+  //   text: '✳️ Emerald'
+  // },
+  // {
+  //   name: 'corporate',
+  //   text: '🏢 Corporate'
+  // },
+  // {
+  //   name: 'valentine',
+  //   text: '🌸 Valentine'
+  // },
+  // {
+  //   name: 'synthwave',
+  //   text: '🌃 Synthwave'
+  // },
+  // {
+  //   name: 'retro',
+  //   text: '🌇 Retro'
+  // },
+  // {
+  //   name: 'cyberpunk',
+  //   text: '🌐 Cyberpunk'
+  // },
+  // {
+  //   name: 'halloween',
+  //   text: '🎃 Halloween'
+  // },
+  // {
+  //   name: 'garden',
+  //   text: '🏡 Garden'
+  // },
+  // {
+  //   name: 'forest',
+  //   text: '🌲 Forest'
+  // },
+  // {
+  //   name: 'aqua',
+  //   text: '💦 Aqua'
+  // },
+  // {
+  //   name: 'lofi',
+  //   text: '🎶 Lo-Fi'
+  // },
+  // {
+  //   name: 'pastel',
+  //   text: '🌈 Pastel'
+  // },
+  // {
+  //   name: 'fantasy',
+  //   text: '🐣 Fantasy'
+  // },
+  // {
+  //   name: 'wirefream',
+  //   text: '📱 Wireframe'
+  // },
+  // {
+  //   name: 'black',
+  //   text: '🖤 Black'
+  // },
+  // {
+  //   name: 'luxury',
+  //   text: '💰 Luxury'
+  // },
+  // {
+  //   name: 'cmyk',
+  //   text: '🖨️ CMYK'
+  // },
+  // {
+  //   name: 'autumn',
+  //   text: '🍂 Autumn'
+  // },
+  // {
+  //   name: 'business',
+  //   text: '🗄️ Business'
+  // },
+  // {
+  //   name: 'acid',
+  //   text: '🌧️ Acid'
+  // },
+  // {
+  //   name: 'lemonade',
+  //   text: '🍋 Lemonade'
+  // },
+  // {
+  //   name: 'night',
+  //   text: '🌃 Night'
+  // },
+  // {
+  //   name: 'coffee',
+  //   text: '☕ Coffee'
+  // },
+  // {
+  //   name: 'winter',
+  //   text: '❄️ Winter'
+  // }
 ]
 
 export const head: HeadConfig = {}
@@ -56,37 +124,37 @@ export const head: HeadConfig = {}
 export const header: HeaderConfig = {
   nav: [
     {
-      link: '/hello-world',
-      text: 'Get Started',
+      text: 'Home',
+      link: '/'
     },
     {
-      link: '/hello-world/elements',
-      text: 'Elements',
-    },
-  ],
+      text: 'Photography',
+      link: 'https://photo.gothuey.dev/'
+    }
+  ]
 }
 
 export const footer: FooterConfig = {
   nav: [
     {
-      link: '/atom.xml',
       text: 'Feed',
+      link: '/atom.xml'
     },
     {
-      link: '/sitemap.xml',
       text: 'Sitemap',
-    },
-  ],
+      link: '/sitemap.xml'
+    }
+  ]
 }
 
 export const date: DateConfig = {
-  locales: 'en-US',
+  locales: 'en-gb',
   options: {
-    day: 'numeric',
-    month: 'short',
-    weekday: 'long',
     year: '2-digit',
-  },
+    weekday: 'long',
+    month: 'short',
+    day: 'numeric'
+  }
 }
 
 export const feed: FeedConfig = {}

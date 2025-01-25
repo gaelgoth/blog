@@ -1,7 +1,9 @@
 ---
+flags:
+- unlisted
 title: Elements
 created: 2021-12-12
-tags: ['Urara', 'Elements']
+# tags: ['Urara', 'Elements']
 ---
 
 ## Headings
@@ -105,7 +107,7 @@ This is an inline note. ^[You can type footnotes inline, so you don’t have to 
 ## Code
 
 ```ts twoslash title="examples/index.ts"
-for (const x in [0]) console.log(x)
+for (let x in [0]) console.log(x)
 ```
 
 ```ts twoslash {1-6}
@@ -123,7 +125,7 @@ function createLabel<T extends number | string>(idOrName: T): NameOrId<T> {
   throw 'unimplemented'
 }
 
-const a = createLabel('typescript')
+let a = createLabel('typescript')
 ```
 
 ## Misc

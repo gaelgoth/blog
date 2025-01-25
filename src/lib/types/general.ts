@@ -1,42 +1,42 @@
 export type ThemeConfig = {
-  name: string
   text?: string
+  name: string
 }[]
 
-export interface HeadConfig {
-  custom?: (params: { dev: boolean, page?: Urara.Page, post?: Urara.Post }) => string[]
+export type HeadConfig = {
+  custom?: (params: { dev: boolean; post?: Urara.Post; page?: Urara.Page }) => string[]
   me?: string[]
 }
 
-export interface HeaderConfig {
+export type HeaderConfig = {
   nav?: {
-    children?: {
-      link: string
-      text: string
-    }[]
-    link?: string
     text: string
+    link?: string
+    children?: {
+      text: string
+      link: string
+    }[]
   }[]
   search?: {
+    provider: 'google' | 'duckduckgo'
     colors?: boolean
-    provider: 'duckduckgo' | 'google'
   }
 }
 
-export interface FooterConfig {
-  html?: string
+export type FooterConfig = {
   nav?: {
-    link: string
     text: string
+    link: string
   }[]
+  html?: string
   since?: string
 }
 
-export interface DateConfig { locales: string, options: Intl.DateTimeFormatOptions }
+export type DateConfig = { locales: string; options: Intl.DateTimeFormatOptions }
 
-export interface FeedConfig {
-  /** WebSub (formerly PubSubHubbub) hubs. one per line */
-  hubs?: string[]
+export type FeedConfig = {
   /** feed entry limit. */
   limit?: number
+  /** WebSub (formerly PubSubHubbub) hubs. one per line */
+  hubs?: string[]
 }

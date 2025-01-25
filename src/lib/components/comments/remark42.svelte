@@ -1,8 +1,6 @@
-<script lang='ts'>
+<script lang="ts">
+  import { onMount, onDestroy } from 'svelte'
   import type { Remark42Config } from '$lib/types/post'
-
-  import { onDestroy, onMount } from 'svelte'
-
   export let post: Urara.Post
   export let config: Remark42Config
 
@@ -18,7 +16,7 @@
         host: '${config.host}',
         site_id: '${config.site_id || 'remark'}',
         url: '${post.path}',
-        components: [${config.components || '\'embed\''}],
+        components: [${config.components || "'embed'"}],
         max_shown_comments: ${config.max_shown_comments || 15},
         max_last_comments: ${config.max_last_comments || 15},
         theme: '${config.theme || 'light'}',
@@ -38,17 +36,16 @@
 
     const opt = {
       ...config,
-      url: post.path,
+      url: post.path
     }
 
     const checkRemark42 = () => {
       if ((window as any).REMARK42) {
         remark42Instance = (window as any).REMARK42.createInstance({
           node: document.getElementById('remark42') as HTMLElement,
-          ...opt,
+          ...opt
         })
-      }
-      else {
+      } else {
         setTimeout(checkRemark42, 100)
       }
     }
@@ -63,4 +60,4 @@
   })
 </script>
 
-<div id='remark42' />
+<div id="remark42" />

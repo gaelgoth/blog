@@ -1,34 +1,52 @@
-import { sveltekit } from '@sveltejs/kit/vite'
-import { SvelteKitPWA as pwa } from '@vite-pwa/sveltekit'
+// vite define config
+import { defineConfig } from 'vite'
+// vite plugin
+import UnoCSS from 'unocss/vite'
+import { presetTagify, presetIcons } from 'unocss'
+import extractorSvelte from '@unocss/extractor-svelte'
+import { imagetools } from 'vite-imagetools'
+import { sveltekit as SvelteKit } from '@sveltejs/kit/vite'
+import { SvelteKitPWA } from '@vite-pwa/sveltekit'
+// postcss & tailwindcss
+import TailwindCSS from 'tailwindcss'
+import tailwindConfig from './tailwind.config'
 // @ts-expect-error ts(7016)
 import LightningCSS from 'postcss-lightningcss'
-import TailwindCSS from 'tailwindcss'
-import unoCSS from 'unocss/vite'
-import { defineConfig } from 'vite'
-import { imagetools } from 'vite-imagetools'
-
-import tailwindConfig from './tailwind.config'
-import unoConfig from './uno.config'
 
 export default defineConfig({
+  envPrefix: 'URARA_',
+  build: {
+    sourcemap: false,
+    rollupOptions: {
+      cache: false
+    }
+  },
   css: {
     postcss: {
-      plugins: [TailwindCSS(tailwindConfig), LightningCSS()],
-    },
+      plugins: [TailwindCSS(tailwindConfig), LightningCSS()]
+    }
   },
-  envPrefix: 'URARA_',
   plugins: [
-    unoCSS(unoConfig),
+    UnoCSS({
+      content: { pipeline: { include: [/\.svelte$/, /\.md?$/, /\.ts$/] } },
+      extractors: [extractorSvelte],
+      presets: [
+        presetTagify({
+          extraProperties: (matched: string) => (matched.startsWith('i-') ? { display: 'inline-block' } : {})
+        }),
+        presetIcons({ scale: 1.5 })
+      ]
+    }),
     imagetools(),
-    sveltekit(),
-    pwa({
-      manifest: false,
+    SvelteKit(),
+    SvelteKitPWA({
       registerType: 'autoUpdate',
+      manifest: false,
       scope: '/',
       workbox: {
-        globIgnores: ['**/sw*', '**/workbox-*'],
         globPatterns: ['posts.json', '**/*.{js,css,html,svg,ico,png,webp,avif}'],
-      },
-    }),
-  ],
+        globIgnores: ['**/sw*', '**/workbox-*']
+      }
+    })
+  ]
 })
