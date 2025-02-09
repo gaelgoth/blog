@@ -3,10 +3,10 @@ title: 'Give a second life to my 2011 Mac mini'
 image: '/2023/mac-mini-as-homeserver/mac-mini-homelab.webp'
 # flags:
 # - unlisted
-summary: Recycling your 2011 Mac mini into a Home lab Server
+summary: Recycling your 2011 Mac mini into a homelab Server
 created: 2023-02-09
 # updated: 2022-10-20
-tags: ['Home lab', 'Container']
+tags: ['homelab', 'container']
 ---
 
 > Picture: Gaël G.
@@ -69,9 +69,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable enabled-startup-on-power.service
 ```
 
-## Containers
+## containers
 
-The resource constraints in my home lab prevent me from running multiple virtual machines using solutions like Proxmox or VMWare. In other words, my home lab setup doesn't have the juice to handle that kind of setup.
+The resource constraints in my homelab prevent me from running multiple virtual machines using solutions like Proxmox or VMWare. In other words, my homelab setup doesn't have the juice to handle that kind of setup.
 
 As a home server administrator, I have always strived to keep my infrastructure as easy and simple as possible. One way I have found to do this is by using containers to run all of my services. With containers, you can simply pull down the images you need and run them on your server. This makes it much easier to set up and manage multiple services on a single host. A future article will present you the services that are installed on my server.
 

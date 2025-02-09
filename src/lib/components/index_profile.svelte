@@ -1,8 +1,12 @@
 <script lang="ts">
   import { site } from '$lib/config/site'
 </script>
+
 <svelte:head>
-  <script defer data-project="67b0b8ae97d306c7138c2ee4" src="https://cdn.jsdelivr.net/gh/litlyx/litlyx-js/browser/litlyx.js"></script>
+  <script
+    defer
+    data-project="67b0b8ae97d306c7138c2ee4"
+    src="https://cdn.jsdelivr.net/gh/litlyx/litlyx-js/browser/litlyx.js"></script>
 </svelte:head>
 
 <div

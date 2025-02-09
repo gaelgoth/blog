@@ -6,7 +6,7 @@ image: '/2024/backstage-medium-post/backstage-laptop-banner.webp'
 summary: My Medium Post about Backstage.io
 created: 2024-05-17
 # updated: 2022-10-20
-tags: ['TypeScript', 'Web', 'DevOps']
+tags: ['typescript', 'web', 'web']
 ---
 
 ## Check out my article on Backstage

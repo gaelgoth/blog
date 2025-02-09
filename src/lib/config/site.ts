@@ -37,6 +37,11 @@ export const site: SiteConfig = {
         text: 'photo.gothuey',
         icon: 'i-simple-icons-photon',
         link: 'https://photo.gothuey.dev/'
+      },
+      {
+        text: 'strava/gaelgothuey',
+        icon: 'i-simple-icons-strava',
+        link: 'https://www.strava.com/athletes/gaelgothuey'
       }
     ]
   },

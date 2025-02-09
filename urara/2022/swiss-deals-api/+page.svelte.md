@@ -6,7 +6,7 @@ image: '/2022/swiss-deals-api/swiss-deals-api-bg.webp'
 summary: An API that aggregates the offers of the day
 created: 2022-10-20
 # updated: 2022-10-20
-tags: ['API', 'Go']
+tags: ['api', 'go']
 ---
 
 > Picture: Gaël G.
@@ -27,7 +27,7 @@ A friend of mine told me how he missed out on a fantastic offer on a gaming moni
 
 ## Building API with Golang
 
-Used to create backend in Python or TypeScript/JavaScript, this is a good opportunity for me to try Golang. Before we start coding the API, we need to figure out how to get the information we need. Then we will set up the Go dev environnement. Finally, we will be able to retrieve data from **QoQa**, **Digitec** and **Galaxus**.
+Used to create backend in Python or typescript/JavaScript, this is a good opportunity for me to try Golang. Before we start coding the API, we need to figure out how to get the information we need. Then we will set up the Go dev environnement. Finally, we will be able to retrieve data from **QoQa**, **Digitec** and **Galaxus**.
 
 ### Retrieve data
 
