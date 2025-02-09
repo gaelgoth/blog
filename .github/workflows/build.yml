@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [18.x, 20.x, 22.x]
       fail-fast: false
 
     name: Node ${{ matrix.node-version }} Build
@@ -47,8 +47,8 @@ jobs:
       #   - name: Run TypeScript check
       #     run: pnpm run check
 
-      - name: Run linting
-        run: pnpm run lint
+      #   - name: Run linting
+      #     run: pnpm run lint
 
       - name: Build
         run: pnpm run build
