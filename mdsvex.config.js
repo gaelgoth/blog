@@ -11,7 +11,6 @@ import Slugger from 'github-slugger'
 import remarkFFF from 'remark-fff'
 import remarkGfm from 'remark-gfm'
 
-
 // highlighter
 import { escapeSvelte } from 'mdsvex'
 import { lex, parse as parseFence } from 'fenceparser'

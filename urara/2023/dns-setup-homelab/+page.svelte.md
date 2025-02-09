@@ -6,12 +6,12 @@ image: '/2023/dns-setup-homelab/npm-ssl-certificate.webp'
 summary: Easy TLS certificate set up with Nginx Proxy Manager
 created: 2023-08-01
 # updated: 2022-10-20
-tags: ['Home lab', 'Container']
+tags: ['homelab', 'container']
 ---
 
 ## Introduction
 
-In this blog post, we'll explore an efficient method to set up domain names and valid TLS certificates for your home lab services without exposing them to the public internet. We'll achieve this by using a reverse proxy and obtaining a valid certificate from Let's Encrypt, a widely (and free) recognized Certificate Authority (CA).
+In this blog post, we'll explore an efficient method to set up domain names and valid TLS certificates for your homelab services without exposing them to the public internet. We'll achieve this by using a reverse proxy and obtaining a valid certificate from Let's Encrypt, a widely (and free) recognized Certificate Authority (CA).
 
 ### Why using DNS in my homelab ?
 
@@ -19,13 +19,13 @@ I opted to purchase the domain name gothuey.dev from [Infomaniak](https://www.in
 
 ![Demo with homelab dashboard](/2023/dns-setup-homelab/example-with-dashboard.webp)
 
-The objective I'm striving for involves utilizing my domain directly – for instance, `service.homelab.gothuey.dev` (as seen with `grafana.homelab.gothuey.dev`). This approach empowers me to establish subdomains for various home lab services (Grafana, Jellyfin,.PairDrop,...). By doing so, each service gains a unique and easily recognizable identity, eliminating the need to rely on IP addresses and ports for access.
+The objective I'm striving for involves utilizing my domain directly – for instance, `service.homelab.gothuey.dev` (as seen with `grafana.homelab.gothuey.dev`). This approach empowers me to establish subdomains for various homelab services (Grafana, Jellyfin,.PairDrop,...). By doing so, each service gains a unique and easily recognizable identity, eliminating the need to rely on IP addresses and ports for access.
 
 Keep in mind that the setup described in this guide is geared towards optimizing accessibility and organization within a **local network** context. All my services are not exposed outside my network.
 
 ## Set up
 
-Popular reverse proxies like Nginx, Apache, Swag, or Traefik are excellent choices for setting up in your home lab services. Consider selecting one that aligns with your preferences and suits your specific setup requirements.
+Popular reverse proxies like Nginx, Apache, Swag, or Traefik are excellent choices for setting up in your homelab services. Consider selecting one that aligns with your preferences and suits your specific setup requirements.
 
 In my scenario, I elected to employ Nginx Proxy Manager (NPM) due to its user-centric configuration process. This tool boasts an intuitive setup, rendering it an optimal choice for individuals who are either newcomers to reverse proxies or enthusiasts of a more simplified configuration journey. Of notable significance, NPM comes equipped with a feature that stands out: native support for [Let's Encrypt Challenge DNS-01](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge), right out of the box.
 

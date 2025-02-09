@@ -6,12 +6,12 @@ image: '/2023/vaporflow-startpage/vaporflow-startpage.webp'
 summary: A browser start page with daisyui distinctive aesthetic, featuring OpenWeather
 created: 2023-04-29
 # updated: 2022-10-20
-tags: ['TypeScript', 'Web']
+tags: ['typescript', 'web']
 ---
 
 ## Introduction
 
-Recently, I decided to learn TypeScript by working on a small project called [vaporflow-startpage](https://github.com/gaelgoth/vaporflow-startpage), a customizable browser start page. While I had some experience with JavaScript and Vue.js, I had never worked with TypeScript and React before. Here's how I went about learning TypeScript through this project.
+Recently, I decided to learn typescript by working on a small project called [vaporflow-startpage](https://github.com/gaelgoth/vaporflow-startpage), a customizable browser start page. While I had some experience with JavaScript and Vue.js, I had never worked with typescript and React before. Here's how I went about learning typescript through this project.
 
 <div class="alert shadow-inner">
   <div>
@@ -25,7 +25,7 @@ Recently, I decided to learn TypeScript by working on a small project called [va
 
 ## The idea
 
-I started my TypeScript journey by using the [React Vite Boilerplate](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite), which provided a great starting point for building my own Chrome extension. While exploring various open source projects, I stumbled upon [r/startpages](https://www.reddit.com/r/startpages/) subreddit, where I discovered numerous custom browser start page projects. I was inspired by the designs and decided to create my own start page with a minimalist approach that suits my needs.
+I started my typescript journey by using the [React Vite Boilerplate](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite), which provided a great starting point for building my own Chrome extension. While exploring various open source projects, I stumbled upon [r/startpages](https://www.reddit.com/r/startpages/) subreddit, where I discovered numerous custom browser start page projects. I was inspired by the designs and decided to create my own start page with a minimalist approach that suits my needs.
 
 ## The implementation
 
@@ -35,7 +35,7 @@ The code is very (very) simple and contains avoidable duplications. In addition 
 
 ## Lessons Learned
 
-Working on [vaporflow-startpage](https://github.com/gaelgoth/vaporflow-startpage) has been an exciting journey for me to learn TypeScript and React. By starting with a boilerplate and exploring various open source projects, I was able to develop my own custom browser start page. Through this process, I learned the basics of TypeScript and React, as well as how to integrate APIs like OpenWeather.
+Working on [vaporflow-startpage](https://github.com/gaelgoth/vaporflow-startpage) has been an exciting journey for me to learn typescript and React. By starting with a boilerplate and exploring various open source projects, I was able to develop my own custom browser start page. Through this process, I learned the basics of typescript and React, as well as how to integrate APIs like OpenWeather.
 
 ## Conclusion
 
