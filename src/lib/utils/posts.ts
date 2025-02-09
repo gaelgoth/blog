@@ -26,20 +26,20 @@ export const typeOfPost = (
   fm.title
     ? 'article'
     : fm.image
-    ? 'photo'
-    : fm.audio
-    ? 'audio'
-    : fm.video
-    ? 'video'
-    : fm.bookmark_of
-    ? 'bookmark'
-    : fm.like_of
-    ? 'like'
-    : fm.repost_of
-    ? 'repost'
-    : fm.in_reply_to
-    ? 'reply'
-    : 'note'
+      ? 'photo'
+      : fm.audio
+        ? 'audio'
+        : fm.video
+          ? 'video'
+          : fm.bookmark_of
+            ? 'bookmark'
+            : fm.like_of
+              ? 'like'
+              : fm.repost_of
+                ? 'repost'
+                : fm.in_reply_to
+                  ? 'reply'
+                  : 'note'
 
 /**
  * Generate Posts List

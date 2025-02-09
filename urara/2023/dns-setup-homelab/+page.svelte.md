@@ -7,8 +7,6 @@ summary: Easy TLS certificate set up with Nginx Proxy Manager
 created: 2023-08-01
 # updated: 2022-10-20
 tags: ['Home lab', 'Container']
-
-
 ---
 
 ## Introduction
@@ -48,7 +46,6 @@ services:
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
-
 ```
 
 ### 2: Set up a domain name (Infomaniak)
@@ -58,23 +55,23 @@ At your Infomaniak manager [dashboard](https://manager.infomaniak.com/v3/298166/
 1. Select Change the DNS zone and then click on the ADD AN ENTRY button. Here, you can define how you want to design your domain name.
 2. Create two entries as follows:
 
-    The first entry should be of **TYPE A**, which will point your domain to your private homelab IP address.
+   The first entry should be of **TYPE A**, which will point your domain to your private homelab IP address.
 
-    ```text
-        Type: A
-        Source: homelab.gothuey.dev (replace by your domain name)
-        target: 192.168.1.3 (replace by your private IP)
-        TTL: 1 hour
-    ```
+   ```text
+       Type: A
+       Source: homelab.gothuey.dev (replace by your domain name)
+       target: 192.168.1.3 (replace by your private IP)
+       TTL: 1 hour
+   ```
 
-    The second entry should be of **TYPE CNAME**, enabling the creation of subdomains like `grafana.your-domain.com`
+   The second entry should be of **TYPE CNAME**, enabling the creation of subdomains like `grafana.your-domain.com`
 
-    ```text
-    Type: CNAME
-    Source: *.homelab.gothuey.dev (replace by your domain name)
-    target: homelab.gothuey.dev
-    TTL: 1 hour
-    ```
+   ```text
+   Type: CNAME
+   Source: *.homelab.gothuey.dev (replace by your domain name)
+   target: homelab.gothuey.dev
+   TTL: 1 hour
+   ```
 
 After making the necessary DNS changes, it may take several minutes for your domain to become fully available. To check the availability and ensure the correct configuration, you can use the `dig` command. When the setup is successful, you should see your private homelab address associated with the A record for your domain.
 
@@ -113,10 +110,10 @@ As mentioned earlier, Nginx Proxy Manager has the capability to generate and man
 1. Go to Nginx Proxy Manager (<http://192.168.1.3:81/>) and navigate to the SSL **Certificates** tab.
 2. Click on "Add SSL Certificate" and select "Let's Encrypt."
 3. Configure your Let's Encrypt Certificate as follows:
-    - **Domain Names**: Add the domain and subdomain records.
-    -Enable the **Use a DNS challenge** option.
-    - DNS Provider: Select "Infomaniak."
-    - **Credentials File Content**: Replace x values with the token issued in the last step.
+   - **Domain Names**: Add the domain and subdomain records.
+     -Enable the **Use a DNS challenge** option.
+   - DNS Provider: Select "Infomaniak."
+   - **Credentials File Content**: Replace x values with the token issued in the last step.
 4. Click on the Save button to save the configuration.
 
 If the configuration is completed successfully, you should be able to see your certificate.
@@ -125,19 +122,19 @@ If the configuration is completed successfully, you should be able to see your c
 
 ### 5: Using DNS with services
 
-Now we are ready to set up a proxy entry.  In my case, I would like to direct requests from my Grafana instance, `grafana.homelab.gothuey.dev`, to be redirected to `http://HOMELAB_IP:3002`.
+Now we are ready to set up a proxy entry. In my case, I would like to direct requests from my Grafana instance, `grafana.homelab.gothuey.dev`, to be redirected to `http://HOMELAB_IP:3002`.
 
 1. Begin by navigating to the "Proxy Hosts" tab and selecting "Add Proxy Host."
 2. Configure your host (**⚡Details** tab)
-    - **Domain Name**s**: `HOMELAB_SERVICE.your.domain.name`
-    - **Scheme**: http
-    - **Forward Hostname / IP**: `HOMELAB_IP`
-    - **Forward Port**: `SERVICE_PORT`
-    - Feel free to adjust other settings according to your requirements.
+   - **Domain Name**s\*\*: `HOMELAB_SERVICE.your.domain.name`
+   - **Scheme**: http
+   - **Forward Hostname / IP**: `HOMELAB_IP`
+   - **Forward Port**: `SERVICE_PORT`
+   - Feel free to adjust other settings according to your requirements.
 
 <img src="/2023/dns-setup-homelab/set-up-host.webp" alt="Set up host" width="400" style="display: block; margin: 0 auto;" />
 
-Next, proceed to the  **🛡️SLL** tab o choose an SSL certificate for this host:
+Next, proceed to the **🛡️SLL** tab o choose an SSL certificate for this host:
 
 - **SSL Certificate**: Choose the certificate that was created during [4: Add new certificate in NPM](#4-add-new-certificate-in-npm)
 - Enable **Force SSL** and **HTTP/2 Support**

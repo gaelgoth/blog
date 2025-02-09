@@ -1,6 +1,6 @@
 ---
 flags:
-- unlisted
+  - unlisted
 
 title: ToC Disabled
 summary: This post has disabled table of contents.

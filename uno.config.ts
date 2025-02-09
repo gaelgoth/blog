@@ -6,8 +6,8 @@ export default defineConfig({
   extractors: [extractorSvelte],
   presets: [
     presetTagify({
-      extraProperties: (matched: string) => (matched.startsWith('i-') ? { display: 'inline-block' } : {}),
+      extraProperties: (matched: string) => (matched.startsWith('i-') ? { display: 'inline-block' } : {})
     }),
-    presetIcons({ scale: 1.5 }),
-  ],
+    presetIcons({ scale: 1.5 })
+  ]
 })

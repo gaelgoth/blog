@@ -10,12 +10,8 @@
   "bracketSpacing": true,
   "bracketSameLine": true,
   "htmlWhitespaceSensitivity": "ignore",
-  "plugins": [
-    "prettier-plugin-svelte"
-  ],
-  "pluginSearchDirs": [
-    "."
-  ],
+  "plugins": ["prettier-plugin-svelte"],
+  "pluginSearchDirs": ["."],
   "overrides": [
     {
       "files": "*.svelte",

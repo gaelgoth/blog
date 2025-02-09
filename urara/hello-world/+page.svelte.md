@@ -1,6 +1,6 @@
 ---
 flags:
-- unlisted
+  - unlisted
 
 title: 'Hello World'
 image: '/hello-world/urara.webp'

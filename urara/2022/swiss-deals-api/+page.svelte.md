@@ -7,9 +7,8 @@ summary: An API that aggregates the offers of the day
 created: 2022-10-20
 # updated: 2022-10-20
 tags: ['API', 'Go']
-
-
 ---
+
 > Picture: Gaël G.
 
 ## Introduction
@@ -35,7 +34,7 @@ Used to create backend in Python or TypeScript/JavaScript, this is a good opport
 Let's do some reverse engineering to find the best way to get the information about the offer of the day.
 
 Let's get started with **QoQa**. By analyzing the traffic when we load the page, we can easily notice the `http` request that serves us the promotion of the day.
-![Get http deal from QoQa](/2022/swiss-deals-api/qoqa-http-product.webp "Get http traffic")
+![Get http deal from QoQa](/2022/swiss-deals-api/qoqa-http-product.webp 'Get http traffic')
 
 Basically, we found out that the following Request URL give use the deals: `https://api.qoqa.ch/v2/websites/wwwqoqach/offer_preview`. The `wwwqoqach` identifier can be retrieved from the following endpoint: `https://api.qoqa.ch/v2/websites`
 
@@ -94,7 +93,7 @@ I was able to learn Golang programming through this short project. Along with im
 
 ## Next steps
 
-- [X] Set up a frontend to make access to deals more welcoming
+- [x] Set up a frontend to make access to deals more welcoming
 - [ ] Improve errors handling
 - [ ] Add deals from other online stores
   - [ ] piratesdesprix.ch

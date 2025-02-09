@@ -7,8 +7,6 @@ summary: A browser start page with daisyui distinctive aesthetic, featuring Open
 created: 2023-04-29
 # updated: 2022-10-20
 tags: ['TypeScript', 'Web']
-
-
 ---
 
 ## Introduction

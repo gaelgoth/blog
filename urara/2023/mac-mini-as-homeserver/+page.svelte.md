@@ -3,13 +3,12 @@ title: 'Give a second life to my 2011 Mac mini'
 image: '/2023/mac-mini-as-homeserver/mac-mini-homelab.webp'
 # flags:
 # - unlisted
-summary:  Recycling your 2011 Mac mini into a Home lab Server
+summary: Recycling your 2011 Mac mini into a Home lab Server
 created: 2023-02-09
 # updated: 2022-10-20
 tags: ['Home lab', 'Container']
-
-
 ---
+
 > Picture: Gaël G.
 
 ## Introduction

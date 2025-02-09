@@ -7,15 +7,14 @@ const bio = [
   'Devops Engineer, photographer lover',
   'Devops Engineer who likes sick and fresh UI',
   'Devops Engineer fan of The Los Angeles Lakers',
-  'Devops Engineer who likes to watch the Formula 1 Grand Prix on Sunday',
+  'Devops Engineer who likes to watch the Formula 1 Grand Prix on Sunday'
 ]
-
 
 export const site: SiteConfig = {
   protocol: 'https://',
   domain: import.meta.env.URARA_SITE_DOMAIN ?? 'blog.gothuey.dev',
   title: 'Gaël G.',
-  subtitle: "Blog",
+  subtitle: 'Blog',
   lang: 'en-US',
   description: 'The place where I share things I find interesting',
   author: {
@@ -38,7 +37,7 @@ export const site: SiteConfig = {
         text: 'photo.gothuey',
         icon: 'i-simple-icons-photon',
         link: 'https://photo.gothuey.dev/'
-      },
+      }
     ]
   },
   themeColor: '#3D4451'

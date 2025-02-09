@@ -1,22 +1,12 @@
 {
   "root": true,
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:svelte/recommended",
-    "prettier"
-  ],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:svelte/recommended", "prettier"],
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint",
-    "svelte"
-  ],
+  "plugins": ["@typescript-eslint", "svelte"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2020,
-    "extraFileExtensions": [
-      ".svelte"
-    ]
+    "extraFileExtensions": [".svelte"]
   },
   "env": {
     "browser": true,
@@ -25,9 +15,7 @@
   },
   "overrides": [
     {
-      "files": [
-        "*.svelte"
-      ],
+      "files": ["*.svelte"],
       "parser": "svelte-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser"
