@@ -61,7 +61,7 @@
     "prettier": "^3.4.2",
     "prettier-plugin-svelte": "^3.3.3",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-external-links": "^2.1.0",
+    "rehype-external-links": "^3.0.0",
     "rehype-slug": "^5.1.0",
     "remark": "^14.0.3",
     "remark-fff": "1.0.0-alpha.1",
