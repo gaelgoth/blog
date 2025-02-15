@@ -8,10 +8,10 @@ updates:
       time: '09:00'
       timezone: 'UTC'
     open-pull-requests-limit: 10
-    groups:
-      dependencies:
-        patterns:
-          - '*'
+    # groups:
+    #   dependencies:
+    #     patterns:
+    #       - '*'
     commit-message:
       prefix: 'chore'
       prefix-development: 'chore'
