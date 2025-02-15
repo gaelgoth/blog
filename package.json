@@ -84,6 +84,6 @@
     "workbox-window": "^7.3.0"
   },
   "dependencies": {
-    "@iconify-json/simple-icons": "^1.2.21"
+    "@iconify-json/simple-icons": "^1.2.24"
   }
 }
