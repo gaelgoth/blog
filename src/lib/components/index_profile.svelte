@@ -1,6 +1,9 @@
 <script lang="ts">
   import { site } from '$lib/config/site'
 </script>
+<svelte:head>
+  <script defer data-project="67b0b8ae97d306c7138c2ee4" src="https://cdn.jsdelivr.net/gh/litlyx/litlyx-js/browser/litlyx.js"></script>
+</svelte:head>
 
 <div
   class="h-card flex flex-col gap-4 sticky top-24 card card-body p-4 items-right xl:border-2 xl:py-8 border-base-content/10 xl:ml-auto xl:mr-8 xl:max-w-xs">
