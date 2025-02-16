@@ -85,8 +85,8 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0
       fff-flavored-frontmatter:
-        specifier: 1.0.0-alpha.1
-        version: 1.0.0-alpha.1
+        specifier: 1.2.1
+        version: 1.2.1
       github-slugger:
         specifier: ^2.0.0
         version: 2.0.0
@@ -2130,6 +2130,9 @@ packages:
 
   fff-flavored-frontmatter@1.0.0-alpha.1:
     resolution: {integrity: sha512-5Pd6XnxpuJYVqENDCiCcJE47NdvizN0juaC2HJ+tJghoXHqAerJjLm4CHuCiXuh+KjXxGh0VOkAZBgNvX3dk3w==}
+
+  fff-flavored-frontmatter@1.2.1:
+    resolution: {integrity: sha512-2BpFmLRykSi3c2Ka0nuB46/XsJd+S0xTLXKpbwOIseh6zp7g+k919QS759vsinz3AYLYs7eLF3G4pk2OMSv0iw==}
 
   file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
@@ -6273,6 +6276,8 @@ snapshots:
   fenceparser@2.2.0: {}
 
   fff-flavored-frontmatter@1.0.0-alpha.1: {}
+
+  fff-flavored-frontmatter@1.2.1: {}
 
   file-entry-cache@6.0.1:
     dependencies:
