@@ -9,7 +9,8 @@ import { visit } from 'unist-util-visit'
 import { toString } from 'mdast-util-to-string'
 import Slugger from 'github-slugger'
 import remarkFFF from 'remark-fff'
-import remarkFootnotes from 'remark-footnotes'
+import remarkGfm from 'remark-gfm'
+
 
 // highlighter
 import { escapeSvelte } from 'mdsvex'
@@ -103,7 +104,7 @@ export default {
     ],
     remarkUraraFm,
     remarkUraraSpoiler,
-    [remarkFootnotes, { inlineNotes: true }]
+    [remarkGfm, { inlineNotes: true }]
   ],
   rehypePlugins: [
     rehypeSlug,
