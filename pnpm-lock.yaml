@@ -127,8 +127,8 @@ importers:
         specifier: 1.0.0-alpha.1
         version: 1.0.0-alpha.1
       remark-footnotes:
-        specifier: ~2.0.0
-        version: 2.0.0
+        specifier: ~5.0.0
+        version: 5.0.0
       shiki-twoslash:
         specifier: ^3.1.2
         version: 3.1.2(typescript@5.7.3)
@@ -3370,8 +3370,9 @@ packages:
   remark-fff@1.0.0-alpha.1:
     resolution: {integrity: sha512-A1UZJdEg2LiyAIwh2goDFSgkEen5jfbXPFmsU+hVyvw2K6WlU8g18/wuxaUJsRkh+XCV96eBtKK8vDxZdDdBxQ==}
 
-  remark-footnotes@2.0.0:
-    resolution: {integrity: sha512-3Clt8ZMH75Ayjp9q4CorNeyjwIxHFcTkaektplKGl2A1jNGEUey8cKL0ZC5vJwfcD5GFGsNLImLG/NGzWIzoMQ==}
+  remark-footnotes@5.0.0:
+    resolution: {integrity: sha512-bmRA8Xel4YZA5PphUOdamG3Cf3BshoGZQlwVqF+bv0Ei1/b9ETOSyoKtpVAk8zIRJ2dAwio2HFnbC9wjLmy02A==}
+    deprecated: 'Deprecated: use `remark-gfm`'
 
   remark-parse@11.0.0:
     resolution: {integrity: sha512-FCxlKLNGknS5ba/1lmpYijMUzX2esxW5xQqjWxw2eHFfS2MSdaHVINFmhjo+qN1WhZhNimq0dZATN9pH0IDrpA==}
@@ -7639,7 +7640,7 @@ snapshots:
       fff-flavored-frontmatter: 1.0.0-alpha.1
       unified: 10.1.2
 
-  remark-footnotes@2.0.0: {}
+  remark-footnotes@5.0.0: {}
 
   remark-parse@11.0.0:
     dependencies:
