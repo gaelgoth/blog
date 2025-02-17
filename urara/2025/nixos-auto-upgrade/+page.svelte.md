@@ -4,7 +4,7 @@ image: '/2025/nixos-auto-upgrade/nixos-neofetch-banner.webp'
 # flags:
 #   - unlisted
 summary: Automated Updates with GitHub Actions and Renovate
-created: 2025-02-10
+created: 2025-02-17
 # updated: 2022-10-20
 tags: ['homelab', 'gitops', 'container', 'nixos']
 ---
