@@ -220,8 +220,6 @@ All my `.nix`files can be found in my repository. There is still a bit of work, 
 ## Useful resources ✨
 
 - [Where I get inspirations for updating flake.lock](https://github.com/reckenrode/nixos-configs/blob/main/hosts/meteion/configuration.nix)
-- [Vite Plugin](https://vitejs.dev/guide/api-plugin.html)
-- [Chrome Extension with manifest 3](https://developer.chrome.com/docs/extensions/mv3/)
-- [Rollup](https://rollupjs.org/guide/en/)
-- [Rollup-plugin-chrome-extension](https://www.extend-chrome.dev/rollup-plugin)
-- [Tailwind CSS](https://tailwindcss.com/docs/configuration)
+- [Podman NixOs Doc](https://nixos.wiki/wiki/Podman)
+- [Storage Optimization](https://nixos.wiki/wiki/Storage_optimization)
+- [Garbage Collector](https://nixos.org/guides/nix-pills/11-garbage-collector.html)
