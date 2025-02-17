@@ -29,7 +29,7 @@ Components overview of my homelab environment auto update:
 - **nix-homelab**: VM running in my local network and it should be always synchronized with the configuration described in the GitHub repository
 - **GitHub Actions**: GitHub Actions that update Nix packages
 - **Renovate bot**: It takes care to update containers tags
-- **(Me)**: For security reason I'm the only maintainer of my repo allowed of pushing changes on this repository. This avoid third party (apart from Renovate Bot and GitHub Actions) to update my environment.
+- **(Me)**: For security reason I'm the only maintainer of my repo allowed of pushing changes on this repository. This avoid third party (apart from Renovate Bot and GitHub Actions) to update my environment
 
 ## NixOs packages updates
 
