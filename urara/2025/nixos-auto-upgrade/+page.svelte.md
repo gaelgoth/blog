@@ -33,11 +33,11 @@ Components overview of my homelab environment auto update:
 
 ## NixOs packages updates
 
-The first layer to be updated and patched are the OS and NixOS packages.
+To keep my NixOS setup up-to-date, I use an automated upgrade process that fetches my system configuration from a Git repository. The first layer of updates includes the operating system itself and all installed NixOS packages.
 
-A requirement is needed first. To follow the GitOps principle of pulling the configuration, I need to tell my server where to find the configuration files: [github:gaelgoth/nix-homelab](https://github.com/gaelgoth/nix-homelab).
+Since I follow the GitOps principle, my server doesn't store configuration changes locally. Instead, it pulls the latest state from my [gaelgoth/nix-homelab](https://github.com/gaelgoth/nix-homelab) repository on GitHub. This ensures that my system remains in sync with my desired configuration.
 
-The configuration below will take care of applying the state of configuration files from my repository. Additionally, OS patches will also be applied:
+The configuration below automates this process by periodically fetching updates from my repository and applying them
 
 ```nix
 system.autoUpgrade = {
@@ -49,7 +49,7 @@ system.autoUpgrade = {
 };
 ```
 
-In my case, I do nightly builds but don't allow the system to auto-reboot and apply kernel updates since I still prefer to do this manually 😄. Basically, this step implements the pull operation from my [nix-homelab](https://github.com/gaelgoth/nix-homelab) repo.
+This setup ensures that my system remains updated without manual intervention, while still giving me control over critical updates like kernel changes.
 
 Once applied, logs of the systemd service `nixos-upgrade` can be retrieved like this:
 
@@ -75,7 +75,7 @@ Feb 15 04:25:05 nixos-homelab-vm systemd[1]: nixos-upgrade.service: Consumed 33.
 
 ### GitHub Actions to update `flake.lock`
 
-This step uses CI to refresh the `flake.lock` file, which is a snapshot that locks all dependencies to specific versions. These pinned versions can be updated by running the command `nix flake update`. To automate this process, I've set up a CRON GitHub Actions workflow that runs on daily basis.
+This step uses CI to refresh the `flake.lock` file, which is a snapshot that locks all dependencies to specific versions. These pinned versions can be updated by running the command `nix flake update`. To automate this process, I've set up a cron GitHub Actions workflow that runs on daily basis.
 
 This GitHub Action is scheduled to run before the NixOS upgrade that starts approximately after 4:00 AM Swiss time (CET/CEST):
 
