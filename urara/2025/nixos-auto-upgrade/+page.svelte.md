@@ -73,7 +73,7 @@ Feb 15 04:25:05 nixos-homelab-vm systemd[1]: Finished NixOS Upgrade.
 Feb 15 04:25:05 nixos-homelab-vm systemd[1]: nixos-upgrade.service: Consumed 33.658s CPU time, 1.2G memory peak, 292.9M read from disk, 18.3M written to disk.
 ```
 
-### GitHub Actions to update `flake.lock`
+## GitHub Actions to update `flake.lock`
 
 This step uses CI to refresh the `flake.lock` file, which is a snapshot that locks all dependencies to specific versions. These pinned versions can be updated by running the command `nix flake update`. To automate this process, I've set up a cron GitHub Actions workflow that runs on daily basis.
 
@@ -108,7 +108,7 @@ jobs:
           skip_fetch: true
 ```
 
-### Containers update
+## Containers update
 
 Most of the services that run in my homelab are containers. To keep them up to date, I use Renovate bot. By default, Renovate detects image tags in well-known container files such as `Dockerfile` and `docker-compose.yml`. However, in my configuration, I migrated all my `docker-compose.yml` files into [Podman nix configurations](https://nixos.wiki/wiki/Podman#Run_Podman_containers_as_systemd_services), which are unknown to Renovate.
 
