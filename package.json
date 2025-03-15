@@ -39,7 +39,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.13.8",
     "@types/unist": "^3.0.3",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^6.21.0",
     "@unocss/extractor-svelte": "^66.0.0",
     "@vite-pwa/sveltekit": "^0.6.7",
