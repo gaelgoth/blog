@@ -58,8 +58,8 @@ importers:
         specifier: ^66.0.0
         version: 66.0.0
       '@vite-pwa/sveltekit':
-        specifier: ^0.6.7
-        version: 0.6.7(@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0)))(vite-plugin-pwa@0.21.1(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0))(workbox-build@7.3.0)(workbox-window@7.3.0))
+        specifier: ^1.0.0
+        version: 1.0.0(@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0)))(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0))(workbox-build@7.3.0)(workbox-window@7.3.0)
       chalk:
         specifier: ^5.4.1
         version: 5.4.1
@@ -299,13 +299,13 @@ packages:
     resolution: {integrity: sha512-8NHiL98vsi0mbPQmYAGWwfcFaOy4j2HY49fXJCfuDcdE7fMIsH9a7GdaeXpIBsbT7307WU8KCMp5pUVDNL4f9A==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/parser@7.26.10':
-    resolution: {integrity: sha512-6aQR2zGE/QFi8JpDLjUZEPYOs7+mhKXm86VaKFiLP35JQwQb6bwUE+XbvkH0EptsYhbNBSUGaUBLKqxH1xSgsA==}
+  '@babel/parser@7.26.7':
+    resolution: {integrity: sha512-kEvgGGgEjRUutvdVvZhbn/BxVt+5VSpwXz1j3WYXQbXDo8KzFOPNG2GQbdAiNq8g6wn1yKk7C/qrke03a84V+w==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
-  '@babel/parser@7.26.7':
-    resolution: {integrity: sha512-kEvgGGgEjRUutvdVvZhbn/BxVt+5VSpwXz1j3WYXQbXDo8KzFOPNG2GQbdAiNq8g6wn1yKk7C/qrke03a84V+w==}
+  '@babel/parser@7.27.0':
+    resolution: {integrity: sha512-iaepho73/2Pz7w2eMS0Q5f83+0RKI7i4xmiYeBmDzfRVbQtTOG7Ts0S4HzJVsTMGI9keU8rNfuZr8DKfSt7Yyg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -686,12 +686,12 @@ packages:
     resolution: {integrity: sha512-1x1sgeyRLC3r5fQOM0/xtQKsYjyxmFjaOrLJNtZ81inNjyJHGIolTULPiSc/2qe1/qfpFLisLQYFnnZl7QoedA==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.26.10':
-    resolution: {integrity: sha512-emqcG3vHrpxUKTrxcblR36dcrcoRDvKmnL/dCL6ZsHaShW80qxCAcNhzQZrpeM765VzEos+xOi4s+r4IXzTwdQ==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/types@7.26.7':
     resolution: {integrity: sha512-t8kDRGrKXyp6+tjUh7hw2RLyclsW4TRoRvRHtSyAX9Bb5ldlFh+90YAYY6awRXrlB4G5G2izNeGySpATlFzmOg==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/types@7.27.0':
+    resolution: {integrity: sha512-H45s8fVLYjbhFH62dIJ3WtmJ6RSPt/3DRO0ZcT2SUiYiQyz3BLVb9ADEnLl91m74aQPS3AzzeajZHYOalWe3bg==}
     engines: {node: '>=6.9.0'}
 
   '@esbuild/aix-ppc64@0.21.5':
@@ -1613,13 +1613,12 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@vite-pwa/sveltekit@0.6.7':
-    resolution: {integrity: sha512-geeRgOiFr4RdW4JHIshOTsa8OqX4P+aJtudnKjuxzpmHy44bo4o18OWM1iXc4qXBJCxCw+3yTttyJsdmHXG/sA==}
-    engines: {node: '>=16.14 || >=18.13'}
+  '@vite-pwa/sveltekit@1.0.0':
+    resolution: {integrity: sha512-Tv2Bb0EtXlkYQ/7sFSaK69KYcRJiybGvQbJOcdwna+GngCPAM1g1EsvKQ5Be+r7WqtNJfCzKnMhVVbOGxXjF5A==}
+    engines: {node: '>=18.13'}
     peerDependencies:
       '@sveltejs/kit': ^1.3.1 || ^2.0.1
-      '@vite-pwa/assets-generator': ^0.2.6
-      vite-plugin-pwa: '>=0.21.1 <1'
+      '@vite-pwa/assets-generator': ^1.0.0
     peerDependenciesMeta:
       '@vite-pwa/assets-generator':
         optional: true
@@ -4053,6 +4052,18 @@ packages:
       '@vite-pwa/assets-generator':
         optional: true
 
+  vite-plugin-pwa@1.0.0:
+    resolution: {integrity: sha512-X77jo0AOd5OcxmWj3WnVti8n7Kw2tBgV1c8MCXFclrSlDV23ePzv2eTDIALXI2Qo6nJ5pZJeZAuX0AawvRfoeA==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      '@vite-pwa/assets-generator': ^1.0.0
+      vite: ^3.1.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
+      workbox-build: ^7.3.0
+      workbox-window: ^7.3.0
+    peerDependenciesMeta:
+      '@vite-pwa/assets-generator':
+        optional: true
+
   vite@5.4.14:
     resolution: {integrity: sha512-EK5cY7Q1D8JNhSaPKVK4pwBFvaTmZxEnoKXLG/U9gmdDcihQGNzFlgIvaxezFR4glP1LsuiedwMBqCXH3wZccA==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -4410,13 +4421,13 @@ snapshots:
       '@babel/template': 7.25.9
       '@babel/types': 7.26.7
 
-  '@babel/parser@7.26.10':
-    dependencies:
-      '@babel/types': 7.26.10
-
   '@babel/parser@7.26.7':
     dependencies:
       '@babel/types': 7.26.7
+
+  '@babel/parser@7.27.0':
+    dependencies:
+      '@babel/types': 7.27.0
 
   '@babel/plugin-bugfix-firefox-class-in-computed-class-key@7.25.9(@babel/core@7.26.7)':
     dependencies:
@@ -4896,12 +4907,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/types@7.26.10':
+  '@babel/types@7.26.7':
     dependencies:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
 
-  '@babel/types@7.26.7':
+  '@babel/types@7.27.0':
     dependencies:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
@@ -5778,16 +5789,21 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vite-pwa/sveltekit@0.6.7(@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0)))(vite-plugin-pwa@0.21.1(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0))(workbox-build@7.3.0)(workbox-window@7.3.0))':
+  '@vite-pwa/sveltekit@1.0.0(@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0)))(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0))(workbox-build@7.3.0)(workbox-window@7.3.0)':
     dependencies:
       '@sveltejs/kit': 2.16.1(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0)))(svelte@4.2.19)(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0))
       kolorist: 1.8.0
       tinyglobby: 0.2.12
-      vite-plugin-pwa: 0.21.1(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0))(workbox-build@7.3.0)(workbox-window@7.3.0)
+      vite-plugin-pwa: 1.0.0(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0))(workbox-build@7.3.0)(workbox-window@7.3.0)
+    transitivePeerDependencies:
+      - supports-color
+      - vite
+      - workbox-build
+      - workbox-window
 
   '@vue/compiler-core@3.5.13':
     dependencies:
-      '@babel/parser': 7.26.10
+      '@babel/parser': 7.27.0
       '@vue/shared': 3.5.13
       entities: 4.5.0
       estree-walker: 2.0.2
@@ -5800,7 +5816,7 @@ snapshots:
 
   '@vue/compiler-sfc@3.5.13':
     dependencies:
-      '@babel/parser': 7.26.10
+      '@babel/parser': 7.27.0
       '@vue/compiler-core': 3.5.13
       '@vue/compiler-dom': 3.5.13
       '@vue/compiler-ssr': 3.5.13
@@ -8640,6 +8656,17 @@ snapshots:
       debug: 4.4.0
       pretty-bytes: 6.1.1
       tinyglobby: 0.2.10
+      vite: 5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0)
+      workbox-build: 7.3.0
+      workbox-window: 7.3.0
+    transitivePeerDependencies:
+      - supports-color
+
+  vite-plugin-pwa@1.0.0(vite@5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0))(workbox-build@7.3.0)(workbox-window@7.3.0):
+    dependencies:
+      debug: 4.4.0
+      pretty-bytes: 6.1.1
+      tinyglobby: 0.2.12
       vite: 5.4.14(@types/node@22.13.8)(lightningcss@1.29.1)(terser@5.37.0)
       workbox-build: 7.3.0
       workbox-window: 7.3.0
