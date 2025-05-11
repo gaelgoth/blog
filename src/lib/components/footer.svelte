@@ -23,10 +23,14 @@
         {/each}
         <br />
       {/if}
-      Copyright © {footerConfig.since && footerConfig.since !== new Date().toJSON().substring(0, 4)
+      {footerConfig.since && footerConfig.since !== new Date().toJSON().substring(0, 4)
         ? `${footerConfig.since} - ${new Date().toJSON().substring(0, 4)}`
         : new Date().toJSON().substring(0, 4)}
       {site.author.name}
+      <br />
+      <span>
+        Content under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener noreferrer external" target="_blank">CC BY-NC-SA 4.0 license.</a>
+      </span>
       <br />
       Powered by
       <a
