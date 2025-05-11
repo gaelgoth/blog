@@ -8,10 +8,10 @@ import { imagetools } from 'vite-imagetools'
 import { sveltekit as SvelteKit } from '@sveltejs/kit/vite'
 import { SvelteKitPWA } from '@vite-pwa/sveltekit'
 // postcss & tailwindcss
-import TailwindCSS from 'tailwindcss'
-import tailwindConfig from './tailwind.config'
+import TailwindPostCSS from '@tailwindcss/postcss'
 // @ts-expect-error ts(7016)
 import LightningCSS from 'postcss-lightningcss'
+import tailwindConfig from './tailwind.config'
 
 export default defineConfig({
   envPrefix: 'URARA_',
@@ -23,7 +23,7 @@ export default defineConfig({
   },
   css: {
     postcss: {
-      plugins: [TailwindCSS(tailwindConfig), LightningCSS()]
+      plugins: [TailwindPostCSS(tailwindConfig), LightningCSS()] // Fixme: How to use tailwindConfig?
     }
   },
   plugins: [

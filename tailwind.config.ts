@@ -2,8 +2,6 @@ import type { Config } from 'tailwindcss'
 import typography from '@tailwindcss/typography'
 import daisyui from 'daisyui'
 
-import { theme } from './src/lib/config/general'
-
 export default {
   content: ['./src/**/*.{html,md,js,svelte,ts}'],
   theme: {
@@ -25,6 +23,5 @@ export default {
       }
     }
   },
-  plugins: [typography, daisyui],
-  daisyui: { themes: theme.map(({ name }) => name) }
+  plugins: [typography, daisyui]
 } satisfies Config
