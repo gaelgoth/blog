@@ -71,7 +71,7 @@
     "svelte-check": "^4.2.2",
     "svelte-eslint-parser": "^1.0.1",
     "svelte-preprocess": "^6.0.3",
-    "sveltekit-embed": "^0.0.14",
+    "sveltekit-embed": "^0.0.22",
     "tailwindcss": "^3.4.17",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3",
