@@ -34,7 +34,7 @@
     "@sveltejs/kit": "^2.22.2",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "@tailwindcss/typography": "^0.5.16",
-    "@types/node": "^20.19.4",
+    "@types/node": "^24.0.10",
     "@types/unist": "^3.0.3",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
