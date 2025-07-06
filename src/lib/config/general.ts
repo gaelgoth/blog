@@ -128,6 +128,10 @@ export const header: HeaderConfig = {
       link: '/'
     },
     {
+      text: 'About',
+      link: '/about'
+    },
+    {
       text: 'Photography',
       link: 'https://photo.gothuey.dev/'
     }
