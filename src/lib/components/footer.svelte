@@ -29,7 +29,12 @@
       {site.author.name}
       <br />
       <span>
-        Content under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener noreferrer external" target="_blank">CC BY-NC-SA 4.0 license.</a>
+        Content under the <a
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+          rel="noopener noreferrer external"
+          target="_blank">
+          CC BY-NC-SA 4.0 license.
+        </a>
       </span>
       <br />
       Powered by
