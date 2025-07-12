@@ -61,7 +61,7 @@
     "rehype-external-links": "^2.1.0",
     "rehype-slug": "^5.1.0",
     "remark": "^14.0.3",
-    "remark-fff": "1.0.0-alpha.1",
+    "remark-fff": "1.2.1",
     "remark-footnotes": "~2.0.0",
     "remark-gfm": "^4.0.1",
     "shiki-twoslash": "^3.1.2",
