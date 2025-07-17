@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x, 22.x] # This help to try building with future node LTS versions
+        node-version: [22.x] # This help to try building with future node LTS versions
       fail-fast: false
 
     name: Node ${{ matrix.node-version }} Build
