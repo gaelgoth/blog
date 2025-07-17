@@ -46,7 +46,7 @@
     "chalk": "^5.4.1",
     "chokidar": "^3.6.0",
     "cross-env": "^7.0.3",
-    "daisyui": "^4.12.24",
+    "daisyui": "^5.0.46",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.46.1",
