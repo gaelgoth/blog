@@ -4,6 +4,8 @@ Source code of blog: <https://blog.gothuey.dev/>
 
 ## Developing
 
+Requires Node.js 24.x (upcoming LTS) and pnpm 10.
+
 Start a development server:
 
 ```bash
