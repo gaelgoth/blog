@@ -19,8 +19,8 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1
       '@sveltejs/adapter-auto':
-        specifier: ^3.3.1
-        version: 3.3.1(@sveltejs/kit@2.22.2(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))
+        specifier: ^7.0.0
+        version: 7.0.0(@sveltejs/kit@2.22.2(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))
       '@sveltejs/adapter-netlify':
         specifier: ^4.4.2
         version: 4.4.2(@sveltejs/kit@2.22.2(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))
@@ -1408,8 +1408,8 @@ packages:
     peerDependencies:
       acorn: ^8.9.0
 
-  '@sveltejs/adapter-auto@3.3.1':
-    resolution: {integrity: sha512-5Sc7WAxYdL6q9j/+D0jJKjGREGlfIevDyHSQ2eNETHcB1TKlQWHcAo8AS8H1QdjNvSXpvOwNjykDUHPEAyGgdQ==}
+  '@sveltejs/adapter-auto@7.0.0':
+    resolution: {integrity: sha512-ImDWaErTOCkRS4Gt+5gZuymKFBobnhChXUZ9lhUZLahUgvA4OOvRzi3sahzYgbxGj5nkA6OV0GAW378+dl/gyw==}
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
@@ -2535,9 +2535,6 @@ packages:
   import-fresh@3.3.1:
     resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
     engines: {node: '>=6'}
-
-  import-meta-resolve@4.1.0:
-    resolution: {integrity: sha512-I6fiaX09Xivtk+THaMfAwnA3MVA5Big1WHF1Dfx9hFuvNIWpXnorlkzhcQf6ehrqQiiZECRt1poOAkPmer3ruw==}
 
   importx@0.5.2:
     resolution: {integrity: sha512-YEwlK86Ml5WiTxN/ECUYC5U7jd1CisAVw7ya4i9ZppBoHfFkT2+hChhr3PE2fYxUKLkNyivxEQpa5Ruil1LJBQ==}
@@ -5604,10 +5601,9 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  '@sveltejs/adapter-auto@3.3.1(@sveltejs/kit@2.22.2(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))':
+  '@sveltejs/adapter-auto@7.0.0(@sveltejs/kit@2.22.2(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))':
     dependencies:
       '@sveltejs/kit': 2.22.2(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1))
-      import-meta-resolve: 4.1.0
 
   '@sveltejs/adapter-netlify@4.4.2(@sveltejs/kit@2.22.2(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))(svelte@4.2.20)(vite@5.4.19(@types/node@24.9.1)(lightningcss@1.30.1)(terser@5.43.1)))':
     dependencies:
@@ -7043,8 +7039,6 @@ snapshots:
     dependencies:
       parent-module: 1.0.1
       resolve-from: 4.0.0
-
-  import-meta-resolve@4.1.0: {}
 
   importx@0.5.2:
     dependencies:
