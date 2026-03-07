@@ -124,8 +124,8 @@ importers:
         specifier: ^14.0.3
         version: 14.0.3
       remark-fff:
-        specifier: 1.0.0-alpha.1
-        version: 1.0.0-alpha.1
+        specifier: 1.2.1
+        version: 1.2.1
       remark-footnotes:
         specifier: ~2.0.0
         version: 2.0.0
@@ -1153,6 +1153,9 @@ packages:
   '@eslint/js@8.57.1':
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  '@fastify/deepmerge@1.3.0':
+    resolution: {integrity: sha512-J8TOSBq3SoZbDhM9+R/u77hP93gz/rajSA+K2kGyijPpORPWUXHUpTaleoj+92As0S9uPRP7Oi8IqMf0u+ro6A==}
 
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
@@ -2330,6 +2333,9 @@ packages:
 
   fff-flavored-frontmatter@1.0.0-alpha.1:
     resolution: {integrity: sha512-5Pd6XnxpuJYVqENDCiCcJE47NdvizN0juaC2HJ+tJghoXHqAerJjLm4CHuCiXuh+KjXxGh0VOkAZBgNvX3dk3w==}
+
+  fff-flavored-frontmatter@1.2.1:
+    resolution: {integrity: sha512-2BpFmLRykSi3c2Ka0nuB46/XsJd+S0xTLXKpbwOIseh6zp7g+k919QS759vsinz3AYLYs7eLF3G4pk2OMSv0iw==}
 
   file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
@@ -3594,8 +3600,8 @@ packages:
   rehype-slug@5.1.0:
     resolution: {integrity: sha512-Gf91dJoXneiorNEnn+Phx97CO7oRMrpi+6r155tTxzGuLtm+QrI4cTwCa9e1rtePdL4i9tSO58PeSS6HWfgsiw==}
 
-  remark-fff@1.0.0-alpha.1:
-    resolution: {integrity: sha512-A1UZJdEg2LiyAIwh2goDFSgkEen5jfbXPFmsU+hVyvw2K6WlU8g18/wuxaUJsRkh+XCV96eBtKK8vDxZdDdBxQ==}
+  remark-fff@1.2.1:
+    resolution: {integrity: sha512-Pk55/Et12JA75lqy4lYfqmlr/cLrdvKyFvmp7SrH4x06Kh6u1N/sOKjyfBzVr02wg6vBPP7Jur06WIMapYhkNg==}
 
   remark-footnotes@2.0.0:
     resolution: {integrity: sha512-3Clt8ZMH75Ayjp9q4CorNeyjwIxHFcTkaektplKGl2A1jNGEUey8cKL0ZC5vJwfcD5GFGsNLImLG/NGzWIzoMQ==}
@@ -5347,6 +5353,8 @@ snapshots:
 
   '@eslint/js@8.57.1': {}
 
+  '@fastify/deepmerge@1.3.0': {}
+
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
@@ -6817,6 +6825,8 @@ snapshots:
   fenceparser@2.2.0: {}
 
   fff-flavored-frontmatter@1.0.0-alpha.1: {}
+
+  fff-flavored-frontmatter@1.2.1: {}
 
   file-entry-cache@6.0.1:
     dependencies:
@@ -8313,10 +8323,11 @@ snapshots:
       unified: 10.1.2
       unist-util-visit: 4.1.2
 
-  remark-fff@1.0.0-alpha.1:
+  remark-fff@1.2.1:
     dependencies:
-      fff-flavored-frontmatter: 1.0.0-alpha.1
-      unified: 10.1.2
+      '@fastify/deepmerge': 1.3.0
+      fff-flavored-frontmatter: 1.2.1
+      unified: 11.0.5
 
   remark-footnotes@2.0.0: {}
 
