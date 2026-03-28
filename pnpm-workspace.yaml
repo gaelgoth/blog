@@ -1,7 +1,0 @@
-packages:
-  - '.'
-
-onlyBuiltDependencies:
-  - svelte-preprocess
-  - sharp
-  - esbuild
