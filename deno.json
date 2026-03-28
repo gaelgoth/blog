@@ -1,0 +1,23 @@
+{
+  "unstable": ["temporal"],
+  "fmt": {
+    "exclude": ["**/*.svg"]
+  },
+  "tasks": {
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run --allow-all -",
+    "build": "deno task lume",
+    "serve": "deno task lume -s --port=3000",
+    "check": "deno fmt --check && deno lint",
+    "fmt": "deno fmt"
+  },
+  "imports": {
+    "lume/": "https://deno.land/x/lume@v3.2.2/",
+    "@tailwindcss/typography": "npm:@tailwindcss/typography@0.5.19"
+  },
+  "nodeModulesDir": "auto",
+  "compilerOptions": {
+    "types": [
+      "lume/types.ts"
+    ]
+  }
+}

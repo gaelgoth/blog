@@ -1,0 +1,29 @@
+<dialog id="search-dialog" aria-label="Search">
+  <div class="p-4" data-pagefind-ignore="all">
+    <div id="search"></div>
+  </div>
+</dialog>
+
+<script>
+  (function () {
+    const _sd = document.getElementById("search-dialog");
+
+    // Close when clicking the backdrop
+    _sd.addEventListener("click", (e) => {
+      if (e.target === _sd) _sd.close();
+    });
+
+    // ⌘K / Ctrl+K to open
+    document.addEventListener("keydown", (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        _sd.showModal();
+      }
+    });
+
+    // Header buttons (desktop pill + mobile icon)
+    document.getElementById("search-open").addEventListener("click", () => _sd.showModal());
+    const mob = document.getElementById("search-open-mobile");
+    if (mob) mob.addEventListener("click", () => _sd.showModal());
+  })();
+</script>

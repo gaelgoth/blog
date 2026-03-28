@@ -1,0 +1,77 @@
+<header
+  class="fixed top-3 left-1/2 -translate-x-1/2 z-20
+         w-[calc(100%-2rem)] max-w-2xl"
+>
+  <nav
+    class="px-4 h-12 flex items-center justify-between
+           bg-stone-50/90 dark:bg-stone-950/90 backdrop-blur-md
+           border border-stone-200/80 dark:border-stone-800/80
+           rounded-2xl shadow-sm shadow-stone-900/5"
+    aria-label="Main navigation"
+  >
+    <!-- Logo / home link: terminal-style cd path -->
+    {{ set pathSuffix = url === "/" ? "" : url.slice(0, -1) }}
+    <a
+      href="{{ '/' |> url }}"
+      class="font-mono font-semibold text-stone-900 dark:text-stone-100
+             hover:text-stone-600 dark:hover:text-stone-300 transition-colors
+             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-1 dark:focus-visible:ring-stone-400
+             text-sm tracking-tight rounded-sm"
+      aria-label="Home"
+    ><span class="text-stone-400 dark:text-stone-600">~</span>/gaelgoth.dev{{ if pathSuffix }}<span class="font-normal text-stone-400 dark:text-stone-500">{{ pathSuffix }}</span>{{ /if }}</a>
+
+    <!-- Nav links: compare raw url (no base path) against raw hrefs -->
+    <div class="flex items-center gap-1">
+      {{ for link of [{ label: "Blog", href: "/", exact: true }, { label: "Tags", href: "/tags", exact: false }, { label: "CV", href: "/cv", exact: false }] }}
+        {{ set isActive = link.exact ? url === link.href : url.startsWith(link.href) }}
+        <a
+          href="{{ link.href |> url }}"
+          class="px-3 py-1.5 text-sm rounded-lg transition-colors
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-1 dark:focus-visible:ring-stone-400
+                 {{ if isActive }}text-stone-900 dark:text-stone-100 bg-stone-100 dark:bg-stone-800
+                 {{ else }}text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-800{{ /if }}"
+          {{ if isActive }}aria-current="page"{{ /if }}
+        >{{ link.label }}</a>
+      {{ /for }}
+
+      <button
+        id="search-open"
+        type="button"
+        aria-label="Search"
+        class="hidden sm:inline-flex items-center gap-1.5 pl-2.5 pr-2 py-1.5 rounded-lg
+               text-stone-500 dark:text-stone-400
+               hover:text-stone-900 dark:hover:text-stone-100
+               hover:bg-stone-100 dark:hover:bg-stone-800
+               border border-stone-200 dark:border-stone-700
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-1 dark:focus-visible:ring-stone-400
+               transition-colors text-sm"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <span class="font-mono text-[10px] text-stone-400 dark:text-stone-500 leading-none">⌘K</span>
+      </button>
+      <!-- Mobile: icon only -->
+      <button
+        id="search-open-mobile"
+        type="button"
+        aria-label="Search"
+        class="sm:hidden p-2 rounded-lg text-stone-500 dark:text-stone-400
+               hover:text-stone-900 dark:hover:text-stone-100
+               hover:bg-stone-100 dark:hover:bg-stone-800
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-1 dark:focus-visible:ring-stone-400
+               transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+
+      {{ include "components/theme-toggle.vto" }}
+    </div>
+  </nav>
+</header>

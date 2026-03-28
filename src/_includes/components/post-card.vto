@@ -1,0 +1,54 @@
+<article
+  class="card-lift group rounded-xl border border-stone-200 dark:border-stone-800
+         bg-white dark:bg-stone-900 overflow-hidden h-full flex flex-col"
+>
+  <a href="{{ post.url |> url }}" class="flex flex-col h-full">
+    {{ if post.image }}
+      <div class="overflow-hidden flex-shrink-0">
+        <img
+          src="{{ post.image |> url }}"
+          alt="{{ post.title }}"
+          class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+          width="400"
+          height="176"
+        />
+      </div>
+    {{ /if }}
+
+    <div class="p-5 flex flex-col flex-1">
+      <!-- Tags -->
+      {{ if post.tags && post.tags.length > 0 }}
+        <div class="flex flex-wrap gap-1.5 mb-3">
+          {{ for tag of post.tags }}
+            <span
+              class="inline-block text-xs font-medium px-2 py-0.5 rounded-full
+                     bg-stone-100 text-stone-500
+                     dark:bg-stone-800 dark:text-stone-500"
+            >{{ tag }}</span>
+          {{ /for }}
+        </div>
+      {{ /if }}
+
+      <!-- Title -->
+      <h2
+        class="font-semibold text-base text-stone-900 dark:text-stone-100
+               group-hover:text-stone-600 dark:group-hover:text-stone-300
+               transition-colors mb-2 leading-snug"
+      >{{ post.title }}</h2>
+
+      <!-- Summary -->
+      {{ if post.summary }}
+        <p class="text-sm text-stone-500 dark:text-stone-400 line-clamp-2 mb-4 flex-1 leading-relaxed">
+          {{ post.summary }}
+        </p>
+      {{ /if }}
+
+      <!-- Date -->
+      <time
+        class="text-xs text-stone-400 dark:text-stone-500 mt-auto"
+        datetime="{{ post.date |> date('yyyy-MM-dd') }}"
+      >{{ post.date |> date("MMM d, yyyy") }}</time>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,62 @@
+---
+layout: layouts/base.vto
+---
+
+{{ set tagPosts = search.pages("type=post", "date=desc").filter((p) => p.tags && p.tags.includes(tag)) }}
+
+<div class="mx-auto w-full max-w-3xl">
+<div data-pagefind-ignore="all">
+  <div class="mb-8">
+    <a
+      href="{{ '/tags' |> url }}"
+      class="inline-flex items-center gap-1 text-sm text-stone-400 dark:text-stone-500
+             hover:text-stone-700 dark:hover:text-stone-300 transition-colors mb-4"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      All tags
+    </a>
+
+    <h1 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-2">
+      # {{ tag }}
+    </h1>
+    <p class="text-stone-500 dark:text-stone-400 text-sm">
+      {{ tagPosts.length }} article{{ if tagPosts.length !== 1 }}s{{ /if }}
+    </p>
+  </div>
+
+  {{ if tagPosts.length > 0 }}
+    <div>
+      {{ for post of tagPosts }}
+        <article class="group flex flex-col py-3.5 border-b border-stone-100 dark:border-stone-900 last:border-0">
+          <div class="flex items-baseline justify-between gap-4">
+            <a
+              href="{{ post.url |> url }}"
+              class="font-semibold text-stone-900 dark:text-stone-100
+                     group-hover:text-stone-600 dark:group-hover:text-stone-300
+                     transition-colors leading-snug"
+            >{{ post.title }}</a>
+            <time
+              datetime="{{ post.date |> date('yyyy-MM-dd') }}"
+              class="text-xs text-stone-400 dark:text-stone-600 flex-shrink-0 font-mono tabular-nums"
+            >{{ post.date |> date("MMM d, yyyy") }}</time>
+          </div>
+          {{ if post.summary }}
+            <p class="text-sm text-stone-500 dark:text-stone-400 mt-1 leading-snug">{{ post.summary }}</p>
+          {{ /if }}
+          {{ if post.tags && post.tags.length > 0 }}
+            <div class="flex flex-wrap gap-1.5 mt-2">
+              {{ for t of post.tags }}
+                {{ include "components/tag-badge.vto" { tag: t } }}
+              {{ /for }}
+            </div>
+          {{ /if }}
+        </article>
+      {{ /for }}
+    </div>
+  {{ else }}
+    <p class="text-stone-400 dark:text-stone-500 text-sm">No posts with this tag.</p>
+  {{ /if }}
+</div>
+</div>

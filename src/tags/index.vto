@@ -1,0 +1,77 @@
+---
+layout: layouts/base.vto
+title: Tags
+url: /tags/
+metas:
+  title: "Tags — gaelgoth.dev"
+  description: "Browse articles by topic"
+---
+
+<div class="mx-auto w-full max-w-3xl">
+<div data-pagefind-ignore="all">
+  <div class="mb-8">
+    <h1 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-2">
+      Tags
+    </h1>
+    <p class="text-stone-500 dark:text-stone-400 text-sm">
+      Browse all articles by topic.
+    </p>
+  </div>
+
+  {{ set allTags = search.values("tags", "type=post") }}
+  {{ set allPosts = search.pages("type=post") }}
+
+  {{ if allTags.length > 0 }}
+    <div class="flex flex-wrap gap-3 mb-12">
+      {{ for tag of allTags }}
+        {{ set count = allPosts.filter((p) => p.tags && p.tags.includes(tag)).length }}
+        <a
+          href="{{ ('/tags/' + tag) |> slugify |> url }}"
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium
+                 bg-stone-100 dark:bg-stone-800/60
+                 text-stone-700 dark:text-stone-300
+                 hover:bg-stone-200 dark:hover:bg-stone-800
+                 border border-stone-200 dark:border-stone-700
+                 transition-colors"
+        >
+          {{ tag }}
+          <span class="text-xs text-stone-400 dark:text-stone-500 font-normal">
+            {{ count }}
+          </span>
+        </a>
+      {{ /for }}
+    </div>
+
+    <!-- All posts grouped by tag -->
+    {{ for tag of allTags }}
+      {{ set tagPosts = allPosts.filter((p) => p.tags && p.tags.includes(tag)).sort((a, b) => b.date - a.date) }}
+      <section class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <h2 class="text-base font-semibold text-stone-800 dark:text-stone-200">
+            {{ tag }}
+          </h2>
+          <span class="h-px flex-1 bg-stone-200 dark:bg-stone-800"></span>
+        </div>
+        <ul class="space-y-2">
+          {{ for post of tagPosts }}
+            <li class="flex items-baseline gap-3">
+              <time
+                class="text-xs text-stone-400 dark:text-stone-500 flex-shrink-0 w-24"
+                datetime="{{ post.date |> date('yyyy-MM-dd') }}"
+              >{{ post.date |> date("MMM d, yyyy") }}</time>
+              <a
+                href="{{ post.url |> url }}"
+                class="text-sm text-stone-700 dark:text-stone-300
+                       hover:text-stone-900 dark:hover:text-stone-100
+                       transition-colors"
+              >{{ post.title }}</a>
+            </li>
+          {{ /for }}
+        </ul>
+      </section>
+    {{ /for }}
+  {{ else }}
+    <p class="text-stone-400 dark:text-stone-500 text-sm">No tags yet.</p>
+  {{ /if }}
+</div>
+</div>
