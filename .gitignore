@@ -1,0 +1,19 @@
+# Lume build output
+_site/
+
+# Deno cache
+.deno/
+_cache/
+
+# Node modules (created by Deno's nodeModulesDir:auto for Tailwind/jiti resolution)
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo

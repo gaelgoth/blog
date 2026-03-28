@@ -1,0 +1,16 @@
+site:
+  title: "gaelgoth.dev"
+  description: "Technical blog by Gaël — DevOps, homelab, platform engineering and web development."
+  url: "https://gaelgoth.github.io/blog"
+  author:
+    name: "Gaël"
+    github: "https://github.com/gaelgoth"
+    linkedin: "https://linkedin.com/in/TODO"
+    photography: "https://TODO.example.com"
+    rss: "/feed.xml"
+
+metas:
+  site: "gaelgoth.dev"
+  lang: "en"
+  generator: true
+  image: "/assets/og-default.png"

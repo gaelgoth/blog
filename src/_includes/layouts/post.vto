@@ -1,0 +1,152 @@
+---
+layout: layouts/base.vto
+---
+
+<div class="mx-auto w-full max-w-3xl xl:max-w-5xl">
+  <div class="xl:flex xl:gap-8">
+
+<article class="min-w-0 flex-1">
+  <!-- Post header (excluded from pagefind search index) -->
+  <header class="mb-10 not-prose" data-pagefind-ignore>
+    {{ if image }}
+      <div class="overflow-hidden rounded-xl mb-8 -mx-4 sm:mx-0">
+        <img
+          src="{{ image |> url }}"
+          alt="{{ title }}"
+          class="w-full max-h-72 object-cover"
+          loading="eager"
+          width="800"
+          height="288"
+        />
+      </div>
+    {{ /if }}
+
+    <div class="flex flex-wrap gap-2 mb-4">
+      {{ for tag of (tags || []) }}
+        {{ include "components/tag-badge.vto" { tag } }}
+      {{ /for }}
+    </div>
+
+    <h1
+      class="text-3xl sm:text-4xl font-bold text-stone-900 dark:text-stone-100 leading-tight mb-4"
+    >
+      {{ title }}
+    </h1>
+
+    {{ if summary }}
+      <p class="text-lg text-stone-500 dark:text-stone-400 mb-4 leading-relaxed">
+        {{ summary }}
+      </p>
+    {{ /if }}
+
+    <div class="flex items-center gap-3 text-sm text-stone-400 dark:text-stone-500">
+      <time datetime="{{ date |> date('yyyy-MM-dd') }}">
+        {{ date |> date("MMMM d, yyyy") }}
+      </time>
+      {{ if readingTime }}
+        <span>&middot;</span>
+        <span>{{ readingTime }} min read</span>
+      {{ /if }}
+    </div>
+  </header>
+
+  <!-- Post body -->
+  <div class="prose dark:prose-invert prose-stone max-w-none
+              prose-headings:scroll-mt-20
+              prose-a:no-underline prose-a:border-b prose-a:border-stone-300
+              dark:prose-a:border-stone-600
+              hover:prose-a:border-stone-500 dark:hover:prose-a:border-stone-400
+              prose-img:rounded-xl prose-img:mx-auto
+              prose-pre:rounded-xl prose-pre:shadow-sm
+              prose-blockquote:not-italic prose-blockquote:font-normal">
+    {{ content }}
+  </div>
+
+  <!-- Post footer navigation -->
+  <footer class="mt-12 pt-8 border-t border-stone-200 dark:border-stone-800 not-prose" data-pagefind-ignore>
+    {{ set newerPost = search.previousPage(url, "type=post", "date=desc") }}
+    {{ set olderPost = search.nextPage(url, "type=post", "date=desc") }}
+
+    <div class="flex items-center justify-between gap-4">
+
+      <!-- Newer post (left) -->
+      <div class="flex-1 min-w-0">
+        {{ if newerPost }}
+          <a
+            href="{{ newerPost.url |> url }}"
+            class="group flex flex-col gap-1 p-3 -mx-3 rounded-lg
+                   hover:bg-stone-100 dark:hover:bg-stone-800/60 transition-colors
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-1 dark:focus-visible:ring-stone-400"
+          >
+            <span class="flex items-center gap-1.5 text-xs text-stone-400 dark:text-stone-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+              </svg>
+              Newer
+            </span>
+            <span class="text-sm font-medium text-stone-700 dark:text-stone-300
+                         group-hover:text-stone-900 dark:group-hover:text-stone-100
+                         transition-colors line-clamp-2">
+              {{ newerPost.title }}
+            </span>
+          </a>
+        {{ /if }}
+      </div>
+
+      <!-- All posts (center) -->
+      <a
+        href="{{ '/' |> url }}"
+        aria-label="All posts"
+        class="flex-shrink-0 p-2 rounded-lg text-stone-400 dark:text-stone-500
+               hover:text-stone-700 dark:hover:text-stone-300
+               hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-1 dark:focus-visible:ring-stone-400"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+        </svg>
+      </a>
+
+      <!-- Older post (right) -->
+      <div class="flex-1 min-w-0 text-right">
+        {{ if olderPost }}
+          <a
+            href="{{ olderPost.url |> url }}"
+            class="group flex flex-col items-end gap-1 p-3 -mx-3 rounded-lg
+                   hover:bg-stone-100 dark:hover:bg-stone-800/60 transition-colors
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-1 dark:focus-visible:ring-stone-400"
+          >
+            <span class="flex items-center gap-1.5 text-xs text-stone-400 dark:text-stone-500">
+              Older
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </span>
+            <span class="text-sm font-medium text-stone-700 dark:text-stone-300
+                         group-hover:text-stone-900 dark:group-hover:text-stone-100
+                         transition-colors line-clamp-2">
+              {{ olderPost.title }}
+            </span>
+          </a>
+        {{ /if }}
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- TOC: only on post pages -->
+  <script src="{{ '/js/toc.js' |> url }}"></script>
+</article>
+
+    <aside
+      id="toc-aside"
+      class="hidden xl:block w-48 flex-shrink-0"
+    >
+      <nav id="toc-nav" class="sticky top-[76px]" aria-label="Table of contents">
+        <!-- populated by toc.js -->
+      </nav>
+    </aside>
+
+  </div>
+</div>
