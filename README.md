@@ -1,10 +1,12 @@
 # Blog
 
-Personal blog built with [Lume](https://lume.land/) (a Deno static site generator) and Tailwind CSS.
+Personal blog built with [Lume](https://lume.land/) (a Deno static site
+generator) and Tailwind CSS.
 
 ## Prerequisites
 
-Install [Deno](https://docs.deno.com/runtime/getting_started/installation/) (v2+):
+Install [Deno](https://docs.deno.com/runtime/getting_started/installation/)
+(v2+):
 
 ```sh
 curl -fsSL https://deno.land/install.sh | sh
@@ -30,12 +32,12 @@ deno task build
 
 ## Other tasks
 
-| Command          | Description                        |
-| ---------------- | ---------------------------------- |
-| `deno task serve` | Dev server with live reload       |
-| `deno task build` | Production build to `_site/`      |
-| `deno task fmt`   | Format source files               |
-| `deno task check` | Format check + lint               |
+| Command           | Description                  |
+| ----------------- | ---------------------------- |
+| `deno task serve` | Dev server with live reload  |
+| `deno task build` | Production build to `_site/` |
+| `deno task fmt`   | Format source files          |
+| `deno task check` | Format check + lint          |
 
 ## Project structure
 
