@@ -1,0 +1,115 @@
+<!-- Mobile bottom navigation – visible below the sm breakpoint only -->
+<nav
+  class="sm:hidden fixed inset-x-0 bottom-0 z-20 px-4"
+  style="padding-bottom: max(0.75rem, env(safe-area-inset-bottom))"
+  aria-label="Mobile navigation"
+>
+  <div
+    class="h-16 flex items-center justify-around
+           bg-stone-50/90 dark:bg-stone-950/90 backdrop-blur-md
+           border border-stone-200/80 dark:border-stone-800/80
+           rounded-2xl shadow-sm shadow-stone-900/5"
+  >
+
+    <!-- Blog (home) -->
+    {{ set isHome = url === "/" }}
+    <a
+      href="{{ '/' |> url }}"
+      class="flex flex-col items-center gap-0.5 px-3 py-2 rounded-xl transition-colors
+             {{ if isHome }}text-stone-900 dark:text-stone-100{{ else }}text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100{{ /if }}"
+      {{ if isHome }}aria-current="page"{{ /if }}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] flex-shrink-0" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span class="text-[9px] font-medium tracking-wider uppercase">Blog</span>
+    </a>
+
+    <!-- Tags -->
+    {{ set isTags = url.startsWith("/tags") }}
+    <a
+      href="{{ '/tags' |> url }}"
+      class="flex flex-col items-center gap-0.5 px-3 py-2 rounded-xl transition-colors
+             {{ if isTags }}text-stone-900 dark:text-stone-100{{ else }}text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100{{ /if }}"
+      {{ if isTags }}aria-current="page"{{ /if }}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] flex-shrink-0" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+        <line x1="7" y1="7" x2="7.01" y2="7"/>
+      </svg>
+      <span class="text-[9px] font-medium tracking-wider uppercase">Tags</span>
+    </a>
+
+    <!-- CV -->
+    {{ set isCV = url.startsWith("/cv") }}
+    <a
+      href="{{ '/cv' |> url }}"
+      class="flex flex-col items-center gap-0.5 px-3 py-2 rounded-xl transition-colors
+             {{ if isCV }}text-stone-900 dark:text-stone-100{{ else }}text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100{{ /if }}"
+      {{ if isCV }}aria-current="page"{{ /if }}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] flex-shrink-0" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+      <span class="text-[9px] font-medium tracking-wider uppercase">CV</span>
+    </a>
+
+    <!-- Search -->
+    <button
+      id="search-open-mobile"
+      type="button"
+      aria-label="Search"
+      class="flex flex-col items-center gap-0.5 px-3 py-2 rounded-xl transition-colors
+             text-stone-500 dark:text-stone-400
+             hover:text-stone-900 dark:hover:text-stone-100
+             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-1 dark:focus-visible:ring-stone-400"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] flex-shrink-0" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <span class="text-[9px] font-medium tracking-wider uppercase">Search</span>
+    </button>
+
+    <!-- Theme toggle -->
+    <button
+      type="button"
+      aria-label="Toggle dark mode"
+      class="flex flex-col items-center gap-0.5 px-3 py-2 rounded-xl transition-colors
+             text-stone-500 dark:text-stone-400
+             hover:text-stone-900 dark:hover:text-stone-100
+             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-1 dark:focus-visible:ring-stone-400"
+      onclick="
+        const html = document.documentElement;
+        if (html.classList.contains('dark')) {
+          html.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          html.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      "
+    >
+      <span class="relative inline-flex w-[18px] h-[18px]" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="absolute inset-0 w-[18px] h-[18px] opacity-0 dark:opacity-100 transition-opacity duration-200"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="absolute inset-0 w-[18px] h-[18px] opacity-100 dark:opacity-0 transition-opacity duration-200"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </span>
+      <span class="text-[9px] font-medium tracking-wider uppercase">Theme</span>
+    </button>
+
+  </div>
+</nav>

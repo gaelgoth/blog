@@ -18,10 +18,38 @@
              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-1 dark:focus-visible:ring-stone-400
              text-sm tracking-tight rounded-sm"
       aria-label="Home"
-    ><span class="text-stone-400 dark:text-stone-600">~</span>/gaelgoth.dev{{ if pathSuffix }}<span class="font-normal text-stone-400 dark:text-stone-500">{{ pathSuffix }}</span>{{ /if }}</a>
+    ><span class="text-stone-400 dark:text-stone-600">~</span>/gaelgoth.dev{{ if pathSuffix }}<span class="hidden sm:inline font-normal text-stone-400 dark:text-stone-500">{{ pathSuffix }}</span>{{ /if }}</a>
 
-    <!-- Nav links: compare raw url (no base path) against raw hrefs -->
-    <div class="flex items-center gap-1">
+    <!-- Mobile: hamburger button -->
+    <button
+      id="mobile-menu-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      class="sm:hidden -mr-1 p-2 rounded-xl text-stone-500 dark:text-stone-400
+             hover:text-stone-900 dark:hover:text-stone-100
+             hover:bg-stone-100 dark:hover:bg-stone-800
+             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-1 dark:focus-visible:ring-stone-400
+             transition-colors"
+    >
+      <!-- Hamburger icon -->
+      <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      <!-- Close icon (hidden by default) -->
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+
+    <!-- Desktop: nav links + search + theme -->
+    <div class="hidden sm:flex items-center gap-1">
       {{ for link of [{ label: "Blog", href: "/", exact: true }, { label: "Tags", href: "/tags", exact: false }, { label: "CV", href: "/cv", exact: false }] }}
         {{ set isActive = link.exact ? url === link.href : url.startsWith(link.href) }}
         <a
@@ -38,7 +66,7 @@
         id="search-open"
         type="button"
         aria-label="Search"
-        class="hidden sm:inline-flex items-center gap-1.5 pl-2.5 pr-2 py-1.5 rounded-lg
+        class="inline-flex items-center gap-1.5 pl-2.5 pr-2 py-1.5 rounded-lg
                text-stone-500 dark:text-stone-400
                hover:text-stone-900 dark:hover:text-stone-100
                hover:bg-stone-100 dark:hover:bg-stone-800
@@ -53,25 +81,142 @@
         </svg>
         <span class="font-mono text-[10px] text-stone-400 dark:text-stone-500 leading-none">⌘K</span>
       </button>
-      <!-- Mobile: icon only -->
-      <button
-        id="search-open-mobile"
-        type="button"
-        aria-label="Search"
-        class="sm:hidden p-2 rounded-lg text-stone-500 dark:text-stone-400
-               hover:text-stone-900 dark:hover:text-stone-100
-               hover:bg-stone-100 dark:hover:bg-stone-800
-               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-1 dark:focus-visible:ring-stone-400
-               transition-colors"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24"
-             fill="none" stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-        </svg>
-      </button>
 
       {{ include "components/theme-toggle.vto" }}
     </div>
   </nav>
+
+  <!-- Mobile dropdown menu -->
+  <div
+    id="mobile-menu"
+    class="sm:hidden hidden absolute top-full left-0 right-0 mt-2"
+  >
+    <div
+      class="rounded-2xl overflow-hidden
+             bg-stone-50/95 dark:bg-stone-950/95 backdrop-blur-md
+             border border-stone-200/80 dark:border-stone-800/80
+             shadow-md shadow-stone-900/10"
+    >
+      <!-- Nav links -->
+      <div class="p-1.5 flex flex-col gap-0.5">
+        {{ for link of [{ label: "Blog", href: "/", exact: true }, { label: "Tags", href: "/tags", exact: false }, { label: "CV", href: "/cv", exact: false }] }}
+          {{ set isActive = link.exact ? url === link.href : url.startsWith(link.href) }}
+          <a
+            href="{{ link.href |> url }}"
+            class="flex items-center px-3 py-2.5 text-sm rounded-xl transition-colors
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500
+                   {{ if isActive }}text-stone-900 dark:text-stone-100 bg-stone-100 dark:bg-stone-800 font-medium
+                   {{ else }}text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-800{{ /if }}"
+            {{ if isActive }}aria-current="page"{{ /if }}
+          >{{ link.label }}</a>
+        {{ /for }}
+      </div>
+
+      <!-- Divider -->
+      <div class="h-px mx-3 bg-stone-200 dark:bg-stone-800"></div>
+
+      <!-- Actions row: search + theme toggle -->
+      <div class="p-1.5 flex items-center gap-1">
+        <button
+          id="search-open-mobile"
+          type="button"
+          aria-label="Search"
+          class="flex-1 flex items-center gap-2 px-3 py-2.5 text-sm rounded-xl transition-colors
+                 text-stone-600 dark:text-stone-400
+                 hover:text-stone-900 dark:hover:text-stone-100
+                 hover:bg-stone-100 dark:hover:bg-stone-800
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          Search
+          <span class="ml-auto font-mono text-[10px] text-stone-400 dark:text-stone-500">⌘K</span>
+        </button>
+
+        <button
+          type="button"
+          aria-label="Toggle dark mode"
+          class="p-2.5 rounded-xl transition-colors
+                 text-stone-600 dark:text-stone-400
+                 hover:text-stone-900 dark:hover:text-stone-100
+                 hover:bg-stone-100 dark:hover:bg-stone-800
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500"
+          onclick="
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+              html.classList.remove('dark');
+              localStorage.setItem('theme', 'light');
+            } else {
+              html.classList.add('dark');
+              localStorage.setItem('theme', 'dark');
+            }
+          "
+        >
+          <span class="relative inline-flex w-4 h-4" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="absolute inset-0 w-4 h-4 opacity-0 dark:opacity-100 transition-opacity duration-200"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="absolute inset-0 w-4 h-4 opacity-100 dark:opacity-0 transition-opacity duration-200"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const toggle = document.getElementById('mobile-menu-toggle');
+      const menu   = document.getElementById('mobile-menu');
+      const iconMenu  = document.getElementById('icon-menu');
+      const iconClose = document.getElementById('icon-close');
+
+      function openMenu() {
+        menu.classList.remove('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Close menu');
+        iconMenu.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+      }
+
+      function closeMenu() {
+        menu.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+        iconMenu.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      }
+
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        menu.classList.contains('hidden') ? openMenu() : closeMenu();
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!menu.classList.contains('hidden') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+          closeMenu();
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
+          closeMenu();
+          toggle.focus();
+        }
+      });
+
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
+  </script>
 </header>
